@@ -4,6 +4,11 @@ import stippy
 if __name__ == '__main__':
     host_addr = '127.0.0.1:15606'
 
+    # print nodes
+    #nodes = stippy.list_nodes(host_addr)
+    #for node in nodes:
+    #    print(str(node.id) + ' ' + node.rpcAddr + ' ' + node.xferAddr)
+
     # print images
     #images = stippy.list_images(host_addr, band='TCI')
     #for node_id in images:
