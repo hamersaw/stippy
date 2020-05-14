@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='stip',
   syntax='proto2',
   serialized_options=None,
-  serialized_pb=b'\n\nstip.proto\x12\x04stip\"5\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\r\x12\x0f\n\x07rpcAddr\x18\x02 \x02(\t\x12\x10\n\x08xferAddr\x18\x03 \x02(\t\"\x11\n\x0fNodeListRequest\"*\n\rNodeListReply\x12\x19\n\x05nodes\x18\x01 \x03(\x0b\x32\n.stip.Node\"\x1d\n\x0fNodeShowRequest\x12\n\n\x02id\x18\x01 \x02(\r\")\n\rNodeShowReply\x12\x18\n\x04node\x18\x01 \x01(\x0b\x32\n.stip.Node\"\xfa\x01\n\x14\x44\x61taBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12*\n\x0b\x66illRequest\x18\x02 \x01(\x0b\x32\x15.stip.DataFillRequest\x12*\n\x0blistRequest\x18\x03 \x01(\x0b\x32\x15.stip.DataListRequest\x12.\n\rsearchRequest\x18\x04 \x01(\x0b\x32\x17.stip.DataSearchRequest\x12,\n\x0csplitRequest\x18\x05 \x01(\x0b\x32\x16.stip.DataSplitRequest\"\xf2\x04\n\x12\x44\x61taBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12>\n\x0b\x66illReplies\x18\x02 \x03(\x0b\x32).stip.DataBroadcastReply.FillRepliesEntry\x12>\n\x0blistReplies\x18\x03 \x03(\x0b\x32).stip.DataBroadcastReply.ListRepliesEntry\x12\x42\n\rsearchReplies\x18\x04 \x03(\x0b\x32+.stip.DataBroadcastReply.SearchRepliesEntry\x12@\n\x0csplitReplies\x18\x05 \x03(\x0b\x32*.stip.DataBroadcastReply.SplitRepliesEntry\x1aG\n\x10\x46illRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.DataFillReply:\x02\x38\x01\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.DataListReply:\x02\x38\x01\x1aK\n\x12SearchRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.stip.DataSearchReply:\x02\x38\x01\x1aI\n\x11SplitRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.DataSplitReply:\x02\x38\x01\"n\n\x0f\x44\x61taFillRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12\x13\n\x0bthreadCount\x18\x04 \x02(\r\x12\x15\n\rwindowSeconds\x18\x05 \x02(\x03\"\x1f\n\rDataFillReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\xa8\x01\n\x05Image\x12\x0c\n\x04\x62\x61nd\x18\x01 \x02(\t\x12\x15\n\rcloudCoverage\x18\x02 \x01(\x02\x12\x0f\n\x07\x65ndDate\x18\x03 \x02(\x03\x12\x0f\n\x07geohash\x18\x04 \x02(\t\x12\x0c\n\x04path\x18\x05 \x02(\t\x12\x15\n\rpixelCoverage\x18\x06 \x02(\x02\x12\x10\n\x08platform\x18\x07 \x02(\t\x12\x0e\n\x06source\x18\x08 \x02(\t\x12\x11\n\tstartDate\x18\t \x02(\x03\"\x86\x01\n\x0f\x44\x61taListRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x02\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x02\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0e\n\x06source\x18\x06 \x01(\t\",\n\rDataListReply\x12\x1b\n\x06images\x18\x01 \x03(\x0b\x32\x0b.stip.Image\"r\n\x0f\x44\x61taLoadRequest\x12\x11\n\tdirectory\x18\x01 \x02(\t\x12$\n\nloadFormat\x18\x02 \x02(\x0e\x32\x10.stip.LoadFormat\x12\x11\n\tprecision\x18\x03 \x02(\r\x12\x13\n\x0bthreadCount\x18\x04 \x02(\r\" \n\rDataLoadReply\x12\x0f\n\x07task_id\x18\x01 \x02(\x04\"k\n\x06\x45xtent\x12\x0c\n\x04\x62\x61nd\x18\x01 \x02(\t\x12\r\n\x05\x63ount\x18\x02 \x02(\r\x12\x0f\n\x07geohash\x18\x03 \x02(\t\x12\x10\n\x08platform\x18\x04 \x02(\t\x12\x11\n\tprecision\x18\x05 \x02(\r\x12\x0e\n\x06source\x18\x06 \x02(\t\"\x88\x01\n\x11\x44\x61taSearchRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x02\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x02\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0e\n\x06source\x18\x06 \x01(\t\"0\n\x0f\x44\x61taSearchReply\x12\x1d\n\x07\x65xtents\x18\x01 \x03(\x0b\x32\x0c.stip.Extent\"k\n\x10\x44\x61taSplitRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x13\n\x0bthreadCount\x18\x05 \x02(\r\" \n\x0e\x44\x61taSplitReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"p\n\x14TaskBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12*\n\x0blistRequest\x18\x02 \x01(\x0b\x32\x15.stip.TaskListRequest\"\xcb\x01\n\x12TaskBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12>\n\x0blistReplies\x18\x02 \x03(\x0b\x32).stip.TaskBroadcastReply.ListRepliesEntry\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.TaskListReply:\x02\x38\x01\"P\n\x04Task\x12\n\n\x02id\x18\x01 \x02(\x04\x12\x1a\n\x12\x63ompletion_percent\x18\x02 \x02(\x02\x12 \n\x06status\x18\x03 \x02(\x0e\x32\x10.stip.TaskStatus\"\x11\n\x0fTaskListRequest\"*\n\rTaskListReply\x12\x19\n\x05tasks\x18\x01 \x03(\x0b\x32\n.stip.Task\"\x1d\n\x0fTaskShowRequest\x12\n\n\x02id\x18\x01 \x02(\x04\")\n\rTaskShowReply\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.stip.Task*>\n\x11\x44\x61taBroadcastType\x12\x08\n\x04\x46ILL\x10\x00\x12\x08\n\x04LIST\x10\x01\x12\n\n\x06SEARCH\x10\x02\x12\t\n\x05SPLIT\x10\x03*$\n\nLoadFormat\x12\x08\n\x04NAIP\x10\x00\x12\x0c\n\x08SENTINEL\x10\x01*\"\n\x11TaskBroadcastType\x12\r\n\tTASK_LIST\x10\x00*4\n\nTaskStatus\x12\x0c\n\x08\x43OMPLETE\x10\x00\x12\x0b\n\x07\x46\x41ILURE\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x32\x83\x01\n\x11\x43lusterManagement\x12\x36\n\x08NodeList\x12\x15.stip.NodeListRequest\x1a\x13.stip.NodeListReply\x12\x36\n\x08NodeShow\x12\x15.stip.NodeShowRequest\x1a\x13.stip.NodeShowReply2\xe0\x02\n\x0e\x44\x61taManagement\x12\x41\n\tBroadcast\x12\x1a.stip.DataBroadcastRequest\x1a\x18.stip.DataBroadcastReply\x12\x32\n\x04\x46ill\x12\x15.stip.DataFillRequest\x1a\x13.stip.DataFillReply\x12\x32\n\x04List\x12\x15.stip.DataListRequest\x1a\x13.stip.DataListReply\x12\x32\n\x04Load\x12\x15.stip.DataLoadRequest\x1a\x13.stip.DataLoadReply\x12\x38\n\x06Search\x12\x17.stip.DataSearchRequest\x1a\x15.stip.DataSearchReply\x12\x35\n\x05Split\x12\x16.stip.DataSplitRequest\x1a\x14.stip.DataSplitReply2\xbb\x01\n\x0eTaskManagement\x12\x41\n\tBroadcast\x12\x1a.stip.TaskBroadcastRequest\x1a\x18.stip.TaskBroadcastReply\x12\x32\n\x04List\x12\x15.stip.TaskListRequest\x1a\x13.stip.TaskListReply\x12\x32\n\x04Show\x12\x15.stip.TaskShowRequest\x1a\x13.stip.TaskShowReply'
+  serialized_pb=b'\n\nstip.proto\x12\x04stip\"5\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\r\x12\x0f\n\x07rpcAddr\x18\x02 \x02(\t\x12\x10\n\x08xferAddr\x18\x03 \x02(\t\"\x11\n\x0fNodeListRequest\"*\n\rNodeListReply\x12\x19\n\x05nodes\x18\x01 \x03(\x0b\x32\n.stip.Node\"\x1d\n\x0fNodeShowRequest\x12\n\n\x02id\x18\x01 \x02(\r\")\n\rNodeShowReply\x12\x18\n\x04node\x18\x01 \x01(\x0b\x32\n.stip.Node\"\x9e\x01\n\x14\x44\x61taBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12*\n\x0b\x66illRequest\x18\x02 \x01(\x0b\x32\x15.stip.DataFillRequest\x12,\n\x0csplitRequest\x18\x03 \x01(\x0b\x32\x16.stip.DataSplitRequest\"\xd8\x02\n\x12\x44\x61taBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12>\n\x0b\x66illReplies\x18\x02 \x03(\x0b\x32).stip.DataBroadcastReply.FillRepliesEntry\x12@\n\x0csplitReplies\x18\x03 \x03(\x0b\x32*.stip.DataBroadcastReply.SplitRepliesEntry\x1aG\n\x10\x46illRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.DataFillReply:\x02\x38\x01\x1aI\n\x11SplitRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.DataSplitReply:\x02\x38\x01\"~\n\x0f\x44\x61taFillRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12\x0e\n\x06taskId\x18\x04 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x05 \x02(\r\x12\x15\n\rwindowSeconds\x18\x06 \x02(\x03\"\x1f\n\rDataFillReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\xa8\x01\n\x05Image\x12\x0c\n\x04\x62\x61nd\x18\x01 \x02(\t\x12\x15\n\rcloudCoverage\x18\x02 \x01(\x02\x12\x0f\n\x07\x65ndDate\x18\x03 \x02(\x03\x12\x0f\n\x07geohash\x18\x04 \x02(\t\x12\x0c\n\x04path\x18\x05 \x02(\t\x12\x15\n\rpixelCoverage\x18\x06 \x02(\x02\x12\x10\n\x08platform\x18\x07 \x02(\t\x12\x0e\n\x06source\x18\x08 \x02(\t\x12\x11\n\tstartDate\x18\t \x02(\x03\"\x86\x01\n\x0f\x44\x61taListRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x02\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x02\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0e\n\x06source\x18\x06 \x01(\t\"\x82\x01\n\x0f\x44\x61taLoadRequest\x12\x11\n\tdirectory\x18\x01 \x02(\t\x12$\n\nloadFormat\x18\x02 \x02(\x0e\x32\x10.stip.LoadFormat\x12\x11\n\tprecision\x18\x03 \x02(\r\x12\x0e\n\x06taskId\x18\x04 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x05 \x02(\r\" \n\rDataLoadReply\x12\x0f\n\x07task_id\x18\x01 \x02(\x04\"k\n\x06\x45xtent\x12\x0c\n\x04\x62\x61nd\x18\x01 \x02(\t\x12\r\n\x05\x63ount\x18\x02 \x02(\r\x12\x0f\n\x07geohash\x18\x03 \x02(\t\x12\x10\n\x08platform\x18\x04 \x02(\t\x12\x11\n\tprecision\x18\x05 \x02(\r\x12\x0e\n\x06source\x18\x06 \x02(\t\"\x88\x01\n\x11\x44\x61taSearchRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x02\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x02\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0e\n\x06source\x18\x06 \x01(\t\"{\n\x10\x44\x61taSplitRequest\x12\x0c\n\x04\x62\x61nd\x18\x01 \x01(\t\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\" \n\x0e\x44\x61taSplitReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"p\n\x14TaskBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12*\n\x0blistRequest\x18\x02 \x01(\x0b\x32\x15.stip.TaskListRequest\"\xcb\x01\n\x12TaskBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12>\n\x0blistReplies\x18\x02 \x03(\x0b\x32).stip.TaskBroadcastReply.ListRepliesEntry\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.TaskListReply:\x02\x38\x01\"v\n\x04Task\x12\n\n\x02id\x18\x01 \x02(\x04\x12\x16\n\x0eitemsCompleted\x18\x02 \x02(\r\x12\x14\n\x0citemsSkipped\x18\x03 \x02(\r\x12\x12\n\nitemsTotal\x18\x04 \x02(\r\x12 \n\x06status\x18\x05 \x02(\x0e\x32\x10.stip.TaskStatus\"\x11\n\x0fTaskListRequest\"*\n\rTaskListReply\x12\x19\n\x05tasks\x18\x01 \x03(\x0b\x32\n.stip.Task\"\x1d\n\x0fTaskShowRequest\x12\n\n\x02id\x18\x01 \x02(\x04\")\n\rTaskShowReply\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.stip.Task*(\n\x11\x44\x61taBroadcastType\x12\x08\n\x04\x46ILL\x10\x00\x12\t\n\x05SPLIT\x10\x01*$\n\nLoadFormat\x12\x08\n\x04NAIP\x10\x00\x12\x0c\n\x08SENTINEL\x10\x01*\"\n\x11TaskBroadcastType\x12\r\n\tTASK_LIST\x10\x00*4\n\nTaskStatus\x12\x0c\n\x08\x43OMPLETE\x10\x00\x12\x0b\n\x07\x46\x41ILURE\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x32\x83\x01\n\x11\x43lusterManagement\x12\x36\n\x08NodeList\x12\x15.stip.NodeListRequest\x1a\x13.stip.NodeListReply\x12\x36\n\x08NodeShow\x12\x15.stip.NodeShowRequest\x1a\x13.stip.NodeShowReply2\xd3\x02\n\x0e\x44\x61taManagement\x12\x41\n\tBroadcast\x12\x1a.stip.DataBroadcastRequest\x1a\x18.stip.DataBroadcastReply\x12\x32\n\x04\x46ill\x12\x15.stip.DataFillRequest\x1a\x13.stip.DataFillReply\x12,\n\x04List\x12\x15.stip.DataListRequest\x1a\x0b.stip.Image0\x01\x12\x32\n\x04Load\x12\x15.stip.DataLoadRequest\x1a\x13.stip.DataLoadReply\x12\x31\n\x06Search\x12\x17.stip.DataSearchRequest\x1a\x0c.stip.Extent0\x01\x12\x35\n\x05Split\x12\x16.stip.DataSplitRequest\x1a\x14.stip.DataSplitReply2\xbb\x01\n\x0eTaskManagement\x12\x41\n\tBroadcast\x12\x1a.stip.TaskBroadcastRequest\x1a\x18.stip.TaskBroadcastReply\x12\x32\n\x04List\x12\x15.stip.TaskListRequest\x1a\x13.stip.TaskListReply\x12\x32\n\x04Show\x12\x15.stip.TaskShowRequest\x1a\x13.stip.TaskShowReply'
 )
 
 _DATABROADCASTTYPE = _descriptor.EnumDescriptor(
@@ -33,22 +33,14 @@ _DATABROADCASTTYPE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='LIST', index=1, number=1,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SEARCH', index=2, number=2,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SPLIT', index=3, number=3,
+      name='SPLIT', index=1, number=1,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2723,
-  serialized_end=2785,
+  serialized_start=2340,
+  serialized_end=2380,
 )
 _sym_db.RegisterEnumDescriptor(_DATABROADCASTTYPE)
 
@@ -70,8 +62,8 @@ _LOADFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2787,
-  serialized_end=2823,
+  serialized_start=2382,
+  serialized_end=2418,
 )
 _sym_db.RegisterEnumDescriptor(_LOADFORMAT)
 
@@ -89,8 +81,8 @@ _TASKBROADCASTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2825,
-  serialized_end=2859,
+  serialized_start=2420,
+  serialized_end=2454,
 )
 _sym_db.RegisterEnumDescriptor(_TASKBROADCASTTYPE)
 
@@ -116,16 +108,14 @@ _TASKSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2861,
-  serialized_end=2913,
+  serialized_start=2456,
+  serialized_end=2508,
 )
 _sym_db.RegisterEnumDescriptor(_TASKSTATUS)
 
 TaskStatus = enum_type_wrapper.EnumTypeWrapper(_TASKSTATUS)
 FILL = 0
-LIST = 1
-SEARCH = 2
-SPLIT = 3
+SPLIT = 1
 NAIP = 0
 SENTINEL = 1
 TASK_LIST = 0
@@ -319,22 +309,8 @@ _DATABROADCASTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='listRequest', full_name='stip.DataBroadcastRequest.listRequest', index=2,
+      name='splitRequest', full_name='stip.DataBroadcastRequest.splitRequest', index=2,
       number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='searchRequest', full_name='stip.DataBroadcastRequest.searchRequest', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='splitRequest', full_name='stip.DataBroadcastRequest.splitRequest', index=4,
-      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -352,7 +328,7 @@ _DATABROADCASTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=213,
-  serialized_end=463,
+  serialized_end=371,
 )
 
 
@@ -389,82 +365,8 @@ _DATABROADCASTREPLY_FILLREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=796,
-  serialized_end=867,
-)
-
-_DATABROADCASTREPLY_LISTREPLIESENTRY = _descriptor.Descriptor(
-  name='ListRepliesEntry',
-  full_name='stip.DataBroadcastReply.ListRepliesEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stip.DataBroadcastReply.ListRepliesEntry.key', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stip.DataBroadcastReply.ListRepliesEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=869,
-  serialized_end=940,
-)
-
-_DATABROADCASTREPLY_SEARCHREPLIESENTRY = _descriptor.Descriptor(
-  name='SearchRepliesEntry',
-  full_name='stip.DataBroadcastReply.SearchRepliesEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stip.DataBroadcastReply.SearchRepliesEntry.key', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stip.DataBroadcastReply.SearchRepliesEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=942,
-  serialized_end=1017,
+  serialized_start=572,
+  serialized_end=643,
 )
 
 _DATABROADCASTREPLY_SPLITREPLIESENTRY = _descriptor.Descriptor(
@@ -500,8 +402,8 @@ _DATABROADCASTREPLY_SPLITREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1019,
-  serialized_end=1092,
+  serialized_start=645,
+  serialized_end=718,
 )
 
 _DATABROADCASTREPLY = _descriptor.Descriptor(
@@ -526,22 +428,8 @@ _DATABROADCASTREPLY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='listReplies', full_name='stip.DataBroadcastReply.listReplies', index=2,
+      name='splitReplies', full_name='stip.DataBroadcastReply.splitReplies', index=2,
       number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='searchReplies', full_name='stip.DataBroadcastReply.searchReplies', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='splitReplies', full_name='stip.DataBroadcastReply.splitReplies', index=4,
-      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -549,7 +437,7 @@ _DATABROADCASTREPLY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_DATABROADCASTREPLY_FILLREPLIESENTRY, _DATABROADCASTREPLY_LISTREPLIESENTRY, _DATABROADCASTREPLY_SEARCHREPLIESENTRY, _DATABROADCASTREPLY_SPLITREPLIESENTRY, ],
+  nested_types=[_DATABROADCASTREPLY_FILLREPLIESENTRY, _DATABROADCASTREPLY_SPLITREPLIESENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -558,8 +446,8 @@ _DATABROADCASTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=466,
-  serialized_end=1092,
+  serialized_start=374,
+  serialized_end=718,
 )
 
 
@@ -592,15 +480,22 @@ _DATAFILLREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threadCount', full_name='stip.DataFillRequest.threadCount', index=3,
-      number=4, type=13, cpp_type=3, label=2,
+      name='taskId', full_name='stip.DataFillRequest.taskId', index=3,
+      number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='windowSeconds', full_name='stip.DataFillRequest.windowSeconds', index=4,
-      number=5, type=3, cpp_type=2, label=2,
+      name='threadCount', full_name='stip.DataFillRequest.threadCount', index=4,
+      number=5, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='windowSeconds', full_name='stip.DataFillRequest.windowSeconds', index=5,
+      number=6, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -617,8 +512,8 @@ _DATAFILLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1094,
-  serialized_end=1204,
+  serialized_start=720,
+  serialized_end=846,
 )
 
 
@@ -648,8 +543,8 @@ _DATAFILLREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1206,
-  serialized_end=1237,
+  serialized_start=848,
+  serialized_end=879,
 )
 
 
@@ -735,8 +630,8 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1240,
-  serialized_end=1408,
+  serialized_start=882,
+  serialized_end=1050,
 )
 
 
@@ -801,39 +696,8 @@ _DATALISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1411,
-  serialized_end=1545,
-)
-
-
-_DATALISTREPLY = _descriptor.Descriptor(
-  name='DataListReply',
-  full_name='stip.DataListReply',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='images', full_name='stip.DataListReply.images', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1547,
-  serialized_end=1591,
+  serialized_start=1053,
+  serialized_end=1187,
 )
 
 
@@ -866,8 +730,15 @@ _DATALOADREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threadCount', full_name='stip.DataLoadRequest.threadCount', index=3,
-      number=4, type=13, cpp_type=3, label=2,
+      name='taskId', full_name='stip.DataLoadRequest.taskId', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='threadCount', full_name='stip.DataLoadRequest.threadCount', index=4,
+      number=5, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -884,8 +755,8 @@ _DATALOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1593,
-  serialized_end=1707,
+  serialized_start=1190,
+  serialized_end=1320,
 )
 
 
@@ -915,8 +786,8 @@ _DATALOADREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1741,
+  serialized_start=1322,
+  serialized_end=1354,
 )
 
 
@@ -981,8 +852,8 @@ _EXTENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1743,
-  serialized_end=1850,
+  serialized_start=1356,
+  serialized_end=1463,
 )
 
 
@@ -1047,39 +918,8 @@ _DATASEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1853,
-  serialized_end=1989,
-)
-
-
-_DATASEARCHREPLY = _descriptor.Descriptor(
-  name='DataSearchReply',
-  full_name='stip.DataSearchReply',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='extents', full_name='stip.DataSearchReply.extents', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1991,
-  serialized_end=2039,
+  serialized_start=1466,
+  serialized_end=1602,
 )
 
 
@@ -1119,8 +959,15 @@ _DATASPLITREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threadCount', full_name='stip.DataSplitRequest.threadCount', index=4,
-      number=5, type=13, cpp_type=3, label=2,
+      name='taskId', full_name='stip.DataSplitRequest.taskId', index=4,
+      number=5, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='threadCount', full_name='stip.DataSplitRequest.threadCount', index=5,
+      number=6, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1137,8 +984,8 @@ _DATASPLITREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2041,
-  serialized_end=2148,
+  serialized_start=1604,
+  serialized_end=1727,
 )
 
 
@@ -1168,8 +1015,8 @@ _DATASPLITREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2150,
-  serialized_end=2182,
+  serialized_start=1729,
+  serialized_end=1761,
 )
 
 
@@ -1206,8 +1053,8 @@ _TASKBROADCASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2184,
-  serialized_end=2296,
+  serialized_start=1763,
+  serialized_end=1875,
 )
 
 
@@ -1244,8 +1091,8 @@ _TASKBROADCASTREPLY_LISTREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2431,
-  serialized_end=2502,
+  serialized_start=2010,
+  serialized_end=2081,
 )
 
 _TASKBROADCASTREPLY = _descriptor.Descriptor(
@@ -1281,8 +1128,8 @@ _TASKBROADCASTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2299,
-  serialized_end=2502,
+  serialized_start=1878,
+  serialized_end=2081,
 )
 
 
@@ -1301,15 +1148,29 @@ _TASK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='completion_percent', full_name='stip.Task.completion_percent', index=1,
-      number=2, type=2, cpp_type=6, label=2,
-      has_default_value=False, default_value=float(0),
+      name='itemsCompleted', full_name='stip.Task.itemsCompleted', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='status', full_name='stip.Task.status', index=2,
-      number=3, type=14, cpp_type=8, label=2,
+      name='itemsSkipped', full_name='stip.Task.itemsSkipped', index=2,
+      number=3, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='itemsTotal', full_name='stip.Task.itemsTotal', index=3,
+      number=4, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='stip.Task.status', index=4,
+      number=5, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1326,8 +1187,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2504,
-  serialized_end=2584,
+  serialized_start=2083,
+  serialized_end=2201,
 )
 
 
@@ -1350,8 +1211,8 @@ _TASKLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2586,
-  serialized_end=2603,
+  serialized_start=2203,
+  serialized_end=2220,
 )
 
 
@@ -1381,8 +1242,8 @@ _TASKLISTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2605,
-  serialized_end=2647,
+  serialized_start=2222,
+  serialized_end=2264,
 )
 
 
@@ -1412,8 +1273,8 @@ _TASKSHOWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2649,
-  serialized_end=2678,
+  serialized_start=2266,
+  serialized_end=2295,
 )
 
 
@@ -1443,33 +1304,23 @@ _TASKSHOWREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2680,
-  serialized_end=2721,
+  serialized_start=2297,
+  serialized_end=2338,
 )
 
 _NODELISTREPLY.fields_by_name['nodes'].message_type = _NODE
 _NODESHOWREPLY.fields_by_name['node'].message_type = _NODE
 _DATABROADCASTREQUEST.fields_by_name['messageType'].enum_type = _DATABROADCASTTYPE
 _DATABROADCASTREQUEST.fields_by_name['fillRequest'].message_type = _DATAFILLREQUEST
-_DATABROADCASTREQUEST.fields_by_name['listRequest'].message_type = _DATALISTREQUEST
-_DATABROADCASTREQUEST.fields_by_name['searchRequest'].message_type = _DATASEARCHREQUEST
 _DATABROADCASTREQUEST.fields_by_name['splitRequest'].message_type = _DATASPLITREQUEST
 _DATABROADCASTREPLY_FILLREPLIESENTRY.fields_by_name['value'].message_type = _DATAFILLREPLY
 _DATABROADCASTREPLY_FILLREPLIESENTRY.containing_type = _DATABROADCASTREPLY
-_DATABROADCASTREPLY_LISTREPLIESENTRY.fields_by_name['value'].message_type = _DATALISTREPLY
-_DATABROADCASTREPLY_LISTREPLIESENTRY.containing_type = _DATABROADCASTREPLY
-_DATABROADCASTREPLY_SEARCHREPLIESENTRY.fields_by_name['value'].message_type = _DATASEARCHREPLY
-_DATABROADCASTREPLY_SEARCHREPLIESENTRY.containing_type = _DATABROADCASTREPLY
 _DATABROADCASTREPLY_SPLITREPLIESENTRY.fields_by_name['value'].message_type = _DATASPLITREPLY
 _DATABROADCASTREPLY_SPLITREPLIESENTRY.containing_type = _DATABROADCASTREPLY
 _DATABROADCASTREPLY.fields_by_name['messageType'].enum_type = _DATABROADCASTTYPE
 _DATABROADCASTREPLY.fields_by_name['fillReplies'].message_type = _DATABROADCASTREPLY_FILLREPLIESENTRY
-_DATABROADCASTREPLY.fields_by_name['listReplies'].message_type = _DATABROADCASTREPLY_LISTREPLIESENTRY
-_DATABROADCASTREPLY.fields_by_name['searchReplies'].message_type = _DATABROADCASTREPLY_SEARCHREPLIESENTRY
 _DATABROADCASTREPLY.fields_by_name['splitReplies'].message_type = _DATABROADCASTREPLY_SPLITREPLIESENTRY
-_DATALISTREPLY.fields_by_name['images'].message_type = _IMAGE
 _DATALOADREQUEST.fields_by_name['loadFormat'].enum_type = _LOADFORMAT
-_DATASEARCHREPLY.fields_by_name['extents'].message_type = _EXTENT
 _TASKBROADCASTREQUEST.fields_by_name['messageType'].enum_type = _TASKBROADCASTTYPE
 _TASKBROADCASTREQUEST.fields_by_name['listRequest'].message_type = _TASKLISTREQUEST
 _TASKBROADCASTREPLY_LISTREPLIESENTRY.fields_by_name['value'].message_type = _TASKLISTREPLY
@@ -1490,12 +1341,10 @@ DESCRIPTOR.message_types_by_name['DataFillRequest'] = _DATAFILLREQUEST
 DESCRIPTOR.message_types_by_name['DataFillReply'] = _DATAFILLREPLY
 DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
 DESCRIPTOR.message_types_by_name['DataListRequest'] = _DATALISTREQUEST
-DESCRIPTOR.message_types_by_name['DataListReply'] = _DATALISTREPLY
 DESCRIPTOR.message_types_by_name['DataLoadRequest'] = _DATALOADREQUEST
 DESCRIPTOR.message_types_by_name['DataLoadReply'] = _DATALOADREPLY
 DESCRIPTOR.message_types_by_name['Extent'] = _EXTENT
 DESCRIPTOR.message_types_by_name['DataSearchRequest'] = _DATASEARCHREQUEST
-DESCRIPTOR.message_types_by_name['DataSearchReply'] = _DATASEARCHREPLY
 DESCRIPTOR.message_types_by_name['DataSplitRequest'] = _DATASPLITREQUEST
 DESCRIPTOR.message_types_by_name['DataSplitReply'] = _DATASPLITREPLY
 DESCRIPTOR.message_types_by_name['TaskBroadcastRequest'] = _TASKBROADCASTREQUEST
@@ -1562,20 +1411,6 @@ DataBroadcastReply = _reflection.GeneratedProtocolMessageType('DataBroadcastRepl
     })
   ,
 
-  'ListRepliesEntry' : _reflection.GeneratedProtocolMessageType('ListRepliesEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DATABROADCASTREPLY_LISTREPLIESENTRY,
-    '__module__' : 'stip_pb2'
-    # @@protoc_insertion_point(class_scope:stip.DataBroadcastReply.ListRepliesEntry)
-    })
-  ,
-
-  'SearchRepliesEntry' : _reflection.GeneratedProtocolMessageType('SearchRepliesEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DATABROADCASTREPLY_SEARCHREPLIESENTRY,
-    '__module__' : 'stip_pb2'
-    # @@protoc_insertion_point(class_scope:stip.DataBroadcastReply.SearchRepliesEntry)
-    })
-  ,
-
   'SplitRepliesEntry' : _reflection.GeneratedProtocolMessageType('SplitRepliesEntry', (_message.Message,), {
     'DESCRIPTOR' : _DATABROADCASTREPLY_SPLITREPLIESENTRY,
     '__module__' : 'stip_pb2'
@@ -1588,8 +1423,6 @@ DataBroadcastReply = _reflection.GeneratedProtocolMessageType('DataBroadcastRepl
   })
 _sym_db.RegisterMessage(DataBroadcastReply)
 _sym_db.RegisterMessage(DataBroadcastReply.FillRepliesEntry)
-_sym_db.RegisterMessage(DataBroadcastReply.ListRepliesEntry)
-_sym_db.RegisterMessage(DataBroadcastReply.SearchRepliesEntry)
 _sym_db.RegisterMessage(DataBroadcastReply.SplitRepliesEntry)
 
 DataFillRequest = _reflection.GeneratedProtocolMessageType('DataFillRequest', (_message.Message,), {
@@ -1620,13 +1453,6 @@ DataListRequest = _reflection.GeneratedProtocolMessageType('DataListRequest', (_
   })
 _sym_db.RegisterMessage(DataListRequest)
 
-DataListReply = _reflection.GeneratedProtocolMessageType('DataListReply', (_message.Message,), {
-  'DESCRIPTOR' : _DATALISTREPLY,
-  '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.DataListReply)
-  })
-_sym_db.RegisterMessage(DataListReply)
-
 DataLoadRequest = _reflection.GeneratedProtocolMessageType('DataLoadRequest', (_message.Message,), {
   'DESCRIPTOR' : _DATALOADREQUEST,
   '__module__' : 'stip_pb2'
@@ -1654,13 +1480,6 @@ DataSearchRequest = _reflection.GeneratedProtocolMessageType('DataSearchRequest'
   # @@protoc_insertion_point(class_scope:stip.DataSearchRequest)
   })
 _sym_db.RegisterMessage(DataSearchRequest)
-
-DataSearchReply = _reflection.GeneratedProtocolMessageType('DataSearchReply', (_message.Message,), {
-  'DESCRIPTOR' : _DATASEARCHREPLY,
-  '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.DataSearchReply)
-  })
-_sym_db.RegisterMessage(DataSearchReply)
 
 DataSplitRequest = _reflection.GeneratedProtocolMessageType('DataSplitRequest', (_message.Message,), {
   'DESCRIPTOR' : _DATASPLITREQUEST,
@@ -1735,8 +1554,6 @@ _sym_db.RegisterMessage(TaskShowReply)
 
 
 _DATABROADCASTREPLY_FILLREPLIESENTRY._options = None
-_DATABROADCASTREPLY_LISTREPLIESENTRY._options = None
-_DATABROADCASTREPLY_SEARCHREPLIESENTRY._options = None
 _DATABROADCASTREPLY_SPLITREPLIESENTRY._options = None
 _TASKBROADCASTREPLY_LISTREPLIESENTRY._options = None
 
@@ -1746,8 +1563,8 @@ _CLUSTERMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2916,
-  serialized_end=3047,
+  serialized_start=2511,
+  serialized_end=2642,
   methods=[
   _descriptor.MethodDescriptor(
     name='NodeList',
@@ -1779,8 +1596,8 @@ _DATAMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=3050,
-  serialized_end=3402,
+  serialized_start=2645,
+  serialized_end=2984,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',
@@ -1806,7 +1623,7 @@ _DATAMANAGEMENT = _descriptor.ServiceDescriptor(
     index=2,
     containing_service=None,
     input_type=_DATALISTREQUEST,
-    output_type=_DATALISTREPLY,
+    output_type=_IMAGE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1824,7 +1641,7 @@ _DATAMANAGEMENT = _descriptor.ServiceDescriptor(
     index=4,
     containing_service=None,
     input_type=_DATASEARCHREQUEST,
-    output_type=_DATASEARCHREPLY,
+    output_type=_EXTENT,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1848,8 +1665,8 @@ _TASKMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=3405,
-  serialized_end=3592,
+  serialized_start=2987,
+  serialized_end=3174,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',

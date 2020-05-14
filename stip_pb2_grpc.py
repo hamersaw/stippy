@@ -123,20 +123,20 @@ class DataManagementStub(object):
                 request_serializer=stip__pb2.DataFillRequest.SerializeToString,
                 response_deserializer=stip__pb2.DataFillReply.FromString,
                 )
-        self.List = channel.unary_unary(
+        self.List = channel.unary_stream(
                 '/stip.DataManagement/List',
                 request_serializer=stip__pb2.DataListRequest.SerializeToString,
-                response_deserializer=stip__pb2.DataListReply.FromString,
+                response_deserializer=stip__pb2.Image.FromString,
                 )
         self.Load = channel.unary_unary(
                 '/stip.DataManagement/Load',
                 request_serializer=stip__pb2.DataLoadRequest.SerializeToString,
                 response_deserializer=stip__pb2.DataLoadReply.FromString,
                 )
-        self.Search = channel.unary_unary(
+        self.Search = channel.unary_stream(
                 '/stip.DataManagement/Search',
                 request_serializer=stip__pb2.DataSearchRequest.SerializeToString,
-                response_deserializer=stip__pb2.DataSearchReply.FromString,
+                response_deserializer=stip__pb2.Extent.FromString,
                 )
         self.Split = channel.unary_unary(
                 '/stip.DataManagement/Split',
@@ -199,20 +199,20 @@ def add_DataManagementServicer_to_server(servicer, server):
                     request_deserializer=stip__pb2.DataFillRequest.FromString,
                     response_serializer=stip__pb2.DataFillReply.SerializeToString,
             ),
-            'List': grpc.unary_unary_rpc_method_handler(
+            'List': grpc.unary_stream_rpc_method_handler(
                     servicer.List,
                     request_deserializer=stip__pb2.DataListRequest.FromString,
-                    response_serializer=stip__pb2.DataListReply.SerializeToString,
+                    response_serializer=stip__pb2.Image.SerializeToString,
             ),
             'Load': grpc.unary_unary_rpc_method_handler(
                     servicer.Load,
                     request_deserializer=stip__pb2.DataLoadRequest.FromString,
                     response_serializer=stip__pb2.DataLoadReply.SerializeToString,
             ),
-            'Search': grpc.unary_unary_rpc_method_handler(
+            'Search': grpc.unary_stream_rpc_method_handler(
                     servicer.Search,
                     request_deserializer=stip__pb2.DataSearchRequest.FromString,
-                    response_serializer=stip__pb2.DataSearchReply.SerializeToString,
+                    response_serializer=stip__pb2.Extent.SerializeToString,
             ),
             'Split': grpc.unary_unary_rpc_method_handler(
                     servicer.Split,
@@ -273,9 +273,9 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.DataManagement/List',
+        return grpc.experimental.unary_stream(request, target, '/stip.DataManagement/List',
             stip__pb2.DataListRequest.SerializeToString,
-            stip__pb2.DataListReply.FromString,
+            stip__pb2.Image.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -305,9 +305,9 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.DataManagement/Search',
+        return grpc.experimental.unary_stream(request, target, '/stip.DataManagement/Search',
             stip__pb2.DataSearchRequest.SerializeToString,
-            stip__pb2.DataSearchReply.FromString,
+            stip__pb2.Extent.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
