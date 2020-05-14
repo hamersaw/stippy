@@ -12,11 +12,13 @@ if __name__ == '__main__':
     # print images
     #image_iter = stippy.list_images(host_addr, band='TCI')
     #for (node, image) in image_iter:
-    #    print(str(node.id) + ' ' + image.path + ' ' + image.geohash + ' '
-    #        + image.platform + ' ' + image.band + ' ' + image.source)
+    #    print(str(node.id) + ' ' + image.path + ' ' + image.geohash
+    #        + ' ' + image.platform + ' ' + image.band + ' ' 
+    #        + image.source + ' ' + str(image.timestamp))
 
     # print node images
     #image_iter = stippy.list_images(host_addr, geohash='9xnp0')
     #for (node, image) in image_iter:
-    #    print(str(node.id) + ' ' + image.path + ' ' + image.geohash + ' '
-    #        + image.platform + ' ' + image.band + ' ' + image.source)
+    #    print(str(node.id) + ' ' + image.path + ' ' + image.geohash
+    #        + ' ' + image.platform + ' ' + image.band + ' ' 
+    #        + image.source + ' ' + str(image.timestamp))

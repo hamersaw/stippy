@@ -57,17 +57,19 @@ def list_nodes(host_addr):
     # return nodes
     return response.nodes
 
-def list_node_images(host_addr, band=None, geohash=None,
-        max_cloud_coverage=None, min_pixel_coverage=None,
-        platform=None, source=None):
+def list_node_images(host_addr, band=None, end_timestamp=None,
+        geohash=None, max_cloud_coverage=None, min_pixel_coverage=None,
+        platform=None, source=None, start_timestamp=None):
     # initialize request
     request = stip_pb2.DataListRequest(
             band=band,
+            endTimestamp=end_timestamp,
             geohash=geohash,
             maxCloudCoverage=max_cloud_coverage,
             minPixelCoverage=min_pixel_coverage,
             platform=platform,
             source=source,
+            startTimestamp=start_timestamp,
         )
 
     # discover node metadata
@@ -82,17 +84,19 @@ def list_node_images(host_addr, band=None, geohash=None,
     # return new ImageIterator
     return ImageIterator(request, [host_node])
 
-def list_images(host_addr, band=None, geohash=None,
-        max_cloud_coverage=None, min_pixel_coverage=None,
-        platform=None, source=None):
+def list_images(host_addr, band=None, end_timestamp=None,
+        geohash=None, max_cloud_coverage=None, min_pixel_coverage=None,
+        platform=None, source=None, start_timestamp=None):
     # initialize request
     request = stip_pb2.DataListRequest(
             band=band,
+            endTimestamp=end_timestamp,
             geohash=geohash,
             maxCloudCoverage=max_cloud_coverage,
             minPixelCoverage=min_pixel_coverage,
             platform=platform,
             source=source,
+            startTimestamp=start_timestamp,
         )
 
     # return new ImageIterator
