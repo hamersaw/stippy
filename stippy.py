@@ -2,6 +2,20 @@ import grpc
 import stip_pb2
 import stip_pb2_grpc
 
+def list_nodes(host_addr):
+    # open ClusterManagementStub
+    channel = grpc.insecure_channel(host_addr)
+    stub = stip_pb2_grpc.ClusterManagementStub(channel)
+
+    # initialize request
+    request = stip_pb2.NodeListRequest()
+
+    # submit request
+    response = stub.NodeList(request)
+
+    # return nodes
+    return response.nodes
+
 class ImageIterator:
     def __init__(self, request, nodes):
         self.request = request
@@ -43,23 +57,9 @@ class ImageIterator:
 
         return (self.nodes[self.node_index-1], item)
 
-def list_nodes(host_addr):
-    # open ClusterManagementStub
-    channel = grpc.insecure_channel(host_addr)
-    stub = stip_pb2_grpc.ClusterManagementStub(channel)
-
-    # initialize request
-    request = stip_pb2.NodeListRequest()
-
-    # submit request
-    response = stub.NodeList(request)
-
-    # return nodes
-    return response.nodes
-
 def list_node_images(host_addr, band=None, end_timestamp=None,
         geohash=None, max_cloud_coverage=None, min_pixel_coverage=None,
-        platform=None, source=None, start_timestamp=None):
+        platform=None, recurse=False, source=None, start_timestamp=None):
     # initialize request
     request = stip_pb2.DataListRequest(
             band=band,
@@ -68,6 +68,7 @@ def list_node_images(host_addr, band=None, end_timestamp=None,
             maxCloudCoverage=max_cloud_coverage,
             minPixelCoverage=min_pixel_coverage,
             platform=platform,
+            recurse=recurse,
             source=source,
             startTimestamp=start_timestamp,
         )
@@ -86,7 +87,7 @@ def list_node_images(host_addr, band=None, end_timestamp=None,
 
 def list_images(host_addr, band=None, end_timestamp=None,
         geohash=None, max_cloud_coverage=None, min_pixel_coverage=None,
-        platform=None, source=None, start_timestamp=None):
+        platform=None, recurse=False, source=None, start_timestamp=None):
     # initialize request
     request = stip_pb2.DataListRequest(
             band=band,
@@ -95,6 +96,7 @@ def list_images(host_addr, band=None, end_timestamp=None,
             maxCloudCoverage=max_cloud_coverage,
             minPixelCoverage=min_pixel_coverage,
             platform=platform,
+            recurse=recurse,
             source=source,
             startTimestamp=start_timestamp,
         )
