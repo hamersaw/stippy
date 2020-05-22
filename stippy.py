@@ -1,3 +1,4 @@
+import gc
 import grpc
 import stip_pb2
 import stip_pb2_grpc
@@ -13,6 +14,9 @@ def list_nodes(host_addr):
     # submit request
     response = stub.NodeList(request)
 
+    # close channel
+    channel.close()
+
     # return nodes
     return response.nodes
 
@@ -22,6 +26,7 @@ class ImageIterator:
         self.nodes = nodes
         self.node_index = 0
         self.next_item = None
+        self.channel = None
 
     def __iter__(self):
         return self
@@ -29,14 +34,18 @@ class ImageIterator:
     def __next__(self):
         # check if next items exists
         while self.next_item == None:
+            # if open channel -> close
+            if self.channel != None:
+                self.channel.close()
+
             # if no more nodes -> return None
             if self.node_index == len(self.nodes):
                 raise StopIteration
 
             # open iterator stream to next addr
             node = self.nodes[self.node_index]
-            channel = grpc.insecure_channel(node.rpcAddr)
-            stub = stip_pb2_grpc.DataManagementStub(channel)
+            self.channel = grpc.insecure_channel(node.rpcAddr)
+            stub = stip_pb2_grpc.DataManagementStub(self.channel)
             self.it = stub.List(self.request)
 
             # read next item
