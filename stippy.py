@@ -66,12 +66,11 @@ class ImageIterator:
 
         return (self.nodes[self.node_index-1], item)
 
-def list_node_images(host_addr, band=None, end_timestamp=None,
-        geohash=None, max_cloud_coverage=None, min_pixel_coverage=None,
-        platform=None, recurse=False, source=None, start_timestamp=None):
+def list_node_images(host_addr, end_timestamp=None, geohash=None,
+        max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
+        recurse=False, source=None, start_timestamp=None):
     # initialize request
-    request = stip_pb2.DataListRequest(
-            band=band,
+    filter = stip_pb2.Filter(
             endTimestamp=end_timestamp,
             geohash=geohash,
             maxCloudCoverage=max_cloud_coverage,
@@ -80,6 +79,10 @@ def list_node_images(host_addr, band=None, end_timestamp=None,
             recurse=recurse,
             source=source,
             startTimestamp=start_timestamp,
+        )
+
+    request = stip_pb2.DataListRequest(
+            filter=filter,
         )
 
     # discover node metadata
@@ -94,12 +97,11 @@ def list_node_images(host_addr, band=None, end_timestamp=None,
     # return new ImageIterator
     return ImageIterator(request, [host_node])
 
-def list_images(host_addr, band=None, end_timestamp=None,
-        geohash=None, max_cloud_coverage=None, min_pixel_coverage=None,
-        platform=None, recurse=False, source=None, start_timestamp=None):
+def list_images(host_addr, end_timestamp=None, geohash=None,
+        max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
+        recurse=False, source=None, start_timestamp=None):
     # initialize request
-    request = stip_pb2.DataListRequest(
-            band=band,
+    filter = stip_pb2.Filter(
             endTimestamp=end_timestamp,
             geohash=geohash,
             maxCloudCoverage=max_cloud_coverage,
@@ -108,6 +110,10 @@ def list_images(host_addr, band=None, end_timestamp=None,
             recurse=recurse,
             source=source,
             startTimestamp=start_timestamp,
+        )
+
+    request = stip_pb2.DataListRequest(
+            filter=filter,
         )
 
     # return new ImageIterator

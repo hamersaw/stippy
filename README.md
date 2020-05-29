@@ -28,14 +28,18 @@ The test.py file at the root of the projects contains a few examples outlining b
     }
 
     message Image {
-        required string band = 1;
-        optional double cloudCoverage = 2;
-        required string geohash = 3;
-        required string path = 4;
-        required double pixelCoverage = 5;
-        required string platform = 6;
-        required string source = 7;
-        required int64 timestamp = 8;
+        optional double cloudCoverage = 1;
+        required string geohash = 2;
+        repeated File files = 3;
+        required string platform = 4;
+        required string source = 5;
+        required int64 timestamp = 6;
+    }
+
+    message File {
+        required string description = 1;
+        required string path = 2;
+        required double pixelCoverage = 3;
     }
 
 ## TODO

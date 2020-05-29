@@ -10,19 +10,23 @@ if __name__ == '__main__':
     for node in nodes:
         print(str(node.id) + ' ' + node.rpcAddr + ' ' + node.xferAddr)
 
-    # print images for geohash '9xnp0' and band 'TCI'
+    # print images for geohash '9xj6t'
     print('-----IMAGES-----')
-    image_iter = stippy.list_images(host_addr, geohash='9xnp0', band='TCI')
+    image_iter = stippy.list_images(host_addr, geohash='9xj6t')
     for (node, image) in image_iter:
-        print(str(node.id) + ' ' + image.path + ' ' + image.geohash
-            + ' ' + image.platform + ' ' + image.band + ' ' 
-            + image.source + ' ' + str(image.timestamp))
+        print(str(node.id) + ' ' + image.platform + ' ' + image.geohash
+            + ' ' + image.source + ' ' + str(image.timestamp))
+
+        for file in image.files:
+            print('    ' + file.path)
 
     # print images from only the queried 
-    # node for all geohashes starting with '9xn'
+    # node for all geohashes starting with '9xh'
     print('-----NODE IMAGES-----')
-    image_iter = stippy.list_node_images(host_addr, recurse=True, geohash='9xn')
+    image_iter = stippy.list_node_images(host_addr, recurse=True, geohash='9xh')
     for (node, image) in image_iter:
-        print(str(node.id) + ' ' + image.path + ' ' + image.geohash
-            + ' ' + image.platform + ' ' + image.band + ' ' 
-            + image.source + ' ' + str(image.timestamp))
+        print(str(node.id) + ' ' + image.platform + ' ' + image.geohash
+            + ' ' + image.source + ' ' + str(image.timestamp))
+
+        for file in image.files:
+            print('    ' + file.description)
