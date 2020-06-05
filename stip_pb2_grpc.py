@@ -4,9 +4,9 @@ import grpc
 import stip_pb2 as stip__pb2
 
 
-class ClusterManagementStub(object):
+class AlbumManagementStub(object):
     """
-    ClusterManagement Service
+    AlbumManagement Service
     """
 
     def __init__(self, channel):
@@ -15,62 +15,110 @@ class ClusterManagementStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.NodeList = channel.unary_unary(
-                '/stip.ClusterManagement/NodeList',
-                request_serializer=stip__pb2.NodeListRequest.SerializeToString,
-                response_deserializer=stip__pb2.NodeListReply.FromString,
+        self.Broadcast = channel.unary_unary(
+                '/stip.AlbumManagement/Broadcast',
+                request_serializer=stip__pb2.AlbumBroadcastRequest.SerializeToString,
+                response_deserializer=stip__pb2.AlbumBroadcastReply.FromString,
                 )
-        self.NodeShow = channel.unary_unary(
-                '/stip.ClusterManagement/NodeShow',
-                request_serializer=stip__pb2.NodeShowRequest.SerializeToString,
-                response_deserializer=stip__pb2.NodeShowReply.FromString,
+        self.Close = channel.unary_unary(
+                '/stip.AlbumManagement/Close',
+                request_serializer=stip__pb2.AlbumCloseRequest.SerializeToString,
+                response_deserializer=stip__pb2.AlbumCloseReply.FromString,
+                )
+        self.Create = channel.unary_unary(
+                '/stip.AlbumManagement/Create',
+                request_serializer=stip__pb2.AlbumCreateRequest.SerializeToString,
+                response_deserializer=stip__pb2.AlbumCreateReply.FromString,
+                )
+        self.List = channel.unary_unary(
+                '/stip.AlbumManagement/List',
+                request_serializer=stip__pb2.AlbumListRequest.SerializeToString,
+                response_deserializer=stip__pb2.AlbumListReply.FromString,
+                )
+        self.Open = channel.unary_unary(
+                '/stip.AlbumManagement/Open',
+                request_serializer=stip__pb2.AlbumOpenRequest.SerializeToString,
+                response_deserializer=stip__pb2.AlbumOpenReply.FromString,
                 )
 
 
-class ClusterManagementServicer(object):
+class AlbumManagementServicer(object):
     """
-    ClusterManagement Service
+    AlbumManagement Service
     """
 
-    def NodeList(self, request, context):
+    def Broadcast(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NodeShow(self, request, context):
+    def Close(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Create(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Open(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ClusterManagementServicer_to_server(servicer, server):
+def add_AlbumManagementServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'NodeList': grpc.unary_unary_rpc_method_handler(
-                    servicer.NodeList,
-                    request_deserializer=stip__pb2.NodeListRequest.FromString,
-                    response_serializer=stip__pb2.NodeListReply.SerializeToString,
+            'Broadcast': grpc.unary_unary_rpc_method_handler(
+                    servicer.Broadcast,
+                    request_deserializer=stip__pb2.AlbumBroadcastRequest.FromString,
+                    response_serializer=stip__pb2.AlbumBroadcastReply.SerializeToString,
             ),
-            'NodeShow': grpc.unary_unary_rpc_method_handler(
-                    servicer.NodeShow,
-                    request_deserializer=stip__pb2.NodeShowRequest.FromString,
-                    response_serializer=stip__pb2.NodeShowReply.SerializeToString,
+            'Close': grpc.unary_unary_rpc_method_handler(
+                    servicer.Close,
+                    request_deserializer=stip__pb2.AlbumCloseRequest.FromString,
+                    response_serializer=stip__pb2.AlbumCloseReply.SerializeToString,
+            ),
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=stip__pb2.AlbumCreateRequest.FromString,
+                    response_serializer=stip__pb2.AlbumCreateReply.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=stip__pb2.AlbumListRequest.FromString,
+                    response_serializer=stip__pb2.AlbumListReply.SerializeToString,
+            ),
+            'Open': grpc.unary_unary_rpc_method_handler(
+                    servicer.Open,
+                    request_deserializer=stip__pb2.AlbumOpenRequest.FromString,
+                    response_serializer=stip__pb2.AlbumOpenReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'stip.ClusterManagement', rpc_method_handlers)
+            'stip.AlbumManagement', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class ClusterManagement(object):
+class AlbumManagement(object):
     """
-    ClusterManagement Service
+    AlbumManagement Service
     """
 
     @staticmethod
-    def NodeList(request,
+    def Broadcast(request,
             target,
             options=(),
             channel_credentials=None,
@@ -79,14 +127,14 @@ class ClusterManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.ClusterManagement/NodeList',
-            stip__pb2.NodeListRequest.SerializeToString,
-            stip__pb2.NodeListReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/stip.AlbumManagement/Broadcast',
+            stip__pb2.AlbumBroadcastRequest.SerializeToString,
+            stip__pb2.AlbumBroadcastReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NodeShow(request,
+    def Close(request,
             target,
             options=(),
             channel_credentials=None,
@@ -95,9 +143,57 @@ class ClusterManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.ClusterManagement/NodeShow',
-            stip__pb2.NodeShowRequest.SerializeToString,
-            stip__pb2.NodeShowReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/stip.AlbumManagement/Close',
+            stip__pb2.AlbumCloseRequest.SerializeToString,
+            stip__pb2.AlbumCloseReply.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stip.AlbumManagement/Create',
+            stip__pb2.AlbumCreateRequest.SerializeToString,
+            stip__pb2.AlbumCreateReply.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stip.AlbumManagement/List',
+            stip__pb2.AlbumListRequest.SerializeToString,
+            stip__pb2.AlbumListReply.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Open(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stip.AlbumManagement/Open',
+            stip__pb2.AlbumOpenRequest.SerializeToString,
+            stip__pb2.AlbumOpenReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -328,6 +424,72 @@ class DataManagement(object):
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
+class NodeManagementStub(object):
+    """
+    NodeManagement Service
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.List = channel.unary_unary(
+                '/stip.NodeManagement/List',
+                request_serializer=stip__pb2.NodeListRequest.SerializeToString,
+                response_deserializer=stip__pb2.NodeListReply.FromString,
+                )
+
+
+class NodeManagementServicer(object):
+    """
+    NodeManagement Service
+    """
+
+    def List(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_NodeManagementServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=stip__pb2.NodeListRequest.FromString,
+                    response_serializer=stip__pb2.NodeListReply.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'stip.NodeManagement', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class NodeManagement(object):
+    """
+    NodeManagement Service
+    """
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stip.NodeManagement/List',
+            stip__pb2.NodeListRequest.SerializeToString,
+            stip__pb2.NodeListReply.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
 class TaskManagementStub(object):
     """
     TaskManagement Service
@@ -349,11 +511,6 @@ class TaskManagementStub(object):
                 request_serializer=stip__pb2.TaskListRequest.SerializeToString,
                 response_deserializer=stip__pb2.TaskListReply.FromString,
                 )
-        self.Show = channel.unary_unary(
-                '/stip.TaskManagement/Show',
-                request_serializer=stip__pb2.TaskShowRequest.SerializeToString,
-                response_deserializer=stip__pb2.TaskShowReply.FromString,
-                )
 
 
 class TaskManagementServicer(object):
@@ -373,12 +530,6 @@ class TaskManagementServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Show(self, request, context):
-        """Missing associated documentation comment in .proto file"""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_TaskManagementServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -391,11 +542,6 @@ def add_TaskManagementServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=stip__pb2.TaskListRequest.FromString,
                     response_serializer=stip__pb2.TaskListReply.SerializeToString,
-            ),
-            'Show': grpc.unary_unary_rpc_method_handler(
-                    servicer.Show,
-                    request_deserializer=stip__pb2.TaskShowRequest.FromString,
-                    response_serializer=stip__pb2.TaskShowReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -438,21 +584,5 @@ class TaskManagement(object):
         return grpc.experimental.unary_unary(request, target, '/stip.TaskManagement/List',
             stip__pb2.TaskListRequest.SerializeToString,
             stip__pb2.TaskListReply.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Show(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.TaskManagement/Show',
-            stip__pb2.TaskShowRequest.SerializeToString,
-            stip__pb2.TaskShowReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -19,9 +19,82 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='stip',
   syntax='proto2',
   serialized_options=None,
-  serialized_pb=b'\n\nstip.proto\x12\x04stip\"5\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\r\x12\x0f\n\x07rpcAddr\x18\x02 \x02(\t\x12\x10\n\x08xferAddr\x18\x03 \x02(\t\"\x11\n\x0fNodeListRequest\"*\n\rNodeListReply\x12\x19\n\x05nodes\x18\x01 \x03(\x0b\x32\n.stip.Node\"\x1d\n\x0fNodeShowRequest\x12\n\n\x02id\x18\x01 \x02(\r\")\n\rNodeShowReply\x12\x18\n\x04node\x18\x01 \x01(\x0b\x32\n.stip.Node\"\xae\x01\n\x06\x46ilter\x12\x14\n\x0c\x65ndTimestamp\x18\x01 \x01(\x03\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x01\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x01\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0f\n\x07recurse\x18\x06 \x02(\x08\x12\x0e\n\x06source\x18\x07 \x01(\t\x12\x16\n\x0estartTimestamp\x18\x08 \x01(\x03\"\x9e\x01\n\x14\x44\x61taBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12*\n\x0b\x66illRequest\x18\x02 \x01(\x0b\x32\x15.stip.DataFillRequest\x12,\n\x0csplitRequest\x18\x03 \x01(\x0b\x32\x16.stip.DataSplitRequest\"\xd8\x02\n\x12\x44\x61taBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12>\n\x0b\x66illReplies\x18\x02 \x03(\x0b\x32).stip.DataBroadcastReply.FillRepliesEntry\x12@\n\x0csplitReplies\x18\x03 \x03(\x0b\x32*.stip.DataBroadcastReply.SplitRepliesEntry\x1aG\n\x10\x46illRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.DataFillReply:\x02\x38\x01\x1aI\n\x11SplitRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.DataSplitReply:\x02\x38\x01\"k\n\x0f\x44\x61taFillRequest\x12\x1c\n\x06\x66ilter\x18\x01 \x02(\x0b\x32\x0c.stip.Filter\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\x12\x15\n\rwindowSeconds\x18\x04 \x02(\x03\"\x1f\n\rDataFillReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\x7f\n\x05Image\x12\x15\n\rcloudCoverage\x18\x01 \x01(\x01\x12\x0f\n\x07geohash\x18\x02 \x02(\t\x12\x19\n\x05\x66iles\x18\x03 \x03(\x0b\x32\n.stip.File\x12\x10\n\x08platform\x18\x04 \x02(\t\x12\x0e\n\x06source\x18\x05 \x02(\t\x12\x11\n\ttimestamp\x18\x06 \x02(\x03\"@\n\x04\x46ile\x12\x13\n\x0b\x64\x65scription\x18\x01 \x02(\t\x12\x0c\n\x04path\x18\x02 \x02(\t\x12\x15\n\rpixelCoverage\x18\x03 \x02(\x01\"/\n\x0f\x44\x61taListRequest\x12\x1c\n\x06\x66ilter\x18\x01 \x02(\x0b\x32\x0c.stip.Filter\"}\n\x0f\x44\x61taLoadRequest\x12\x0c\n\x04glob\x18\x01 \x02(\t\x12$\n\nloadFormat\x18\x02 \x02(\x0e\x32\x10.stip.LoadFormat\x12\x11\n\tprecision\x18\x03 \x02(\r\x12\x0e\n\x06taskId\x18\x04 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x05 \x02(\r\" \n\rDataLoadReply\x12\x0f\n\x07task_id\x18\x01 \x02(\x04\"]\n\x06\x45xtent\x12\r\n\x05\x63ount\x18\x01 \x02(\r\x12\x0f\n\x07geohash\x18\x02 \x02(\t\x12\x10\n\x08platform\x18\x03 \x02(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06source\x18\x05 \x02(\t\"1\n\x11\x44\x61taSearchRequest\x12\x1c\n\x06\x66ilter\x18\x01 \x02(\x0b\x32\x0c.stip.Filter\"U\n\x10\x44\x61taSplitRequest\x12\x1c\n\x06\x66ilter\x18\x01 \x02(\x0b\x32\x0c.stip.Filter\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\" \n\x0e\x44\x61taSplitReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"p\n\x14TaskBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12*\n\x0blistRequest\x18\x02 \x01(\x0b\x32\x15.stip.TaskListRequest\"\xcb\x01\n\x12TaskBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12>\n\x0blistReplies\x18\x02 \x03(\x0b\x32).stip.TaskBroadcastReply.ListRepliesEntry\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.TaskListReply:\x02\x38\x01\"v\n\x04Task\x12\n\n\x02id\x18\x01 \x02(\x04\x12\x16\n\x0eitemsCompleted\x18\x02 \x02(\r\x12\x14\n\x0citemsSkipped\x18\x03 \x02(\r\x12\x12\n\nitemsTotal\x18\x04 \x02(\r\x12 \n\x06status\x18\x05 \x02(\x0e\x32\x10.stip.TaskStatus\"\x11\n\x0fTaskListRequest\"*\n\rTaskListReply\x12\x19\n\x05tasks\x18\x01 \x03(\x0b\x32\n.stip.Task\"\x1d\n\x0fTaskShowRequest\x12\n\n\x02id\x18\x01 \x02(\x04\")\n\rTaskShowReply\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.stip.Task*(\n\x11\x44\x61taBroadcastType\x12\x08\n\x04\x46ILL\x10\x00\x12\t\n\x05SPLIT\x10\x01*$\n\nLoadFormat\x12\x08\n\x04NAIP\x10\x00\x12\x0c\n\x08SENTINEL\x10\x01*\"\n\x11TaskBroadcastType\x12\r\n\tTASK_LIST\x10\x00*4\n\nTaskStatus\x12\x0c\n\x08\x43OMPLETE\x10\x00\x12\x0b\n\x07\x46\x41ILURE\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x32\x83\x01\n\x11\x43lusterManagement\x12\x36\n\x08NodeList\x12\x15.stip.NodeListRequest\x1a\x13.stip.NodeListReply\x12\x36\n\x08NodeShow\x12\x15.stip.NodeShowRequest\x1a\x13.stip.NodeShowReply2\xd3\x02\n\x0e\x44\x61taManagement\x12\x41\n\tBroadcast\x12\x1a.stip.DataBroadcastRequest\x1a\x18.stip.DataBroadcastReply\x12\x32\n\x04\x46ill\x12\x15.stip.DataFillRequest\x1a\x13.stip.DataFillReply\x12,\n\x04List\x12\x15.stip.DataListRequest\x1a\x0b.stip.Image0\x01\x12\x32\n\x04Load\x12\x15.stip.DataLoadRequest\x1a\x13.stip.DataLoadReply\x12\x31\n\x06Search\x12\x17.stip.DataSearchRequest\x1a\x0c.stip.Extent0\x01\x12\x35\n\x05Split\x12\x16.stip.DataSplitRequest\x1a\x14.stip.DataSplitReply2\xbb\x01\n\x0eTaskManagement\x12\x41\n\tBroadcast\x12\x1a.stip.TaskBroadcastRequest\x1a\x18.stip.TaskBroadcastReply\x12\x32\n\x04List\x12\x15.stip.TaskListRequest\x1a\x13.stip.TaskListReply\x12\x32\n\x04Show\x12\x15.stip.TaskShowRequest\x1a\x13.stip.TaskShowReply'
+  serialized_pb=b'\n\nstip.proto\x12\x04stip\"l\n\x05\x41lbum\x12\x14\n\x0c\x64htKeyLength\x18\x01 \x01(\r\x12\x1e\n\x07geocode\x18\x02 \x02(\x0e\x32\r.stip.Geocode\x12\n\n\x02id\x18\x03 \x02(\t\x12!\n\x06status\x18\x04 \x02(\x0e\x32\x11.stip.AlbumStatus\"\xd3\x01\n\x15\x41lbumBroadcastRequest\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.AlbumBroadcastType\x12/\n\rcreateRequest\x18\x02 \x01(\x0b\x32\x18.stip.AlbumCreateRequest\x12-\n\x0c\x63loseRequest\x18\x03 \x01(\x0b\x32\x17.stip.AlbumCloseRequest\x12+\n\x0bopenRequest\x18\x04 \x01(\x0b\x32\x16.stip.AlbumOpenRequest\"\xf1\x03\n\x13\x41lbumBroadcastReply\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.AlbumBroadcastType\x12\x43\n\rcreateReplies\x18\x02 \x03(\x0b\x32,.stip.AlbumBroadcastReply.CreateRepliesEntry\x12\x41\n\x0c\x63loseReplies\x18\x03 \x03(\x0b\x32+.stip.AlbumBroadcastReply.CloseRepliesEntry\x12?\n\x0bopenReplies\x18\x04 \x03(\x0b\x32*.stip.AlbumBroadcastReply.OpenRepliesEntry\x1aL\n\x12\x43reateRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.stip.AlbumCreateReply:\x02\x38\x01\x1aJ\n\x11\x43loseRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.stip.AlbumCloseReply:\x02\x38\x01\x1aH\n\x10OpenRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.AlbumOpenReply:\x02\x38\x01\"\x1f\n\x11\x41lbumCloseRequest\x12\n\n\x02id\x18\x01 \x02(\t\"\x11\n\x0f\x41lbumCloseReply\"V\n\x12\x41lbumCreateRequest\x12\x14\n\x0c\x64htKeyLength\x18\x01 \x01(\r\x12\x1e\n\x07geocode\x18\x02 \x02(\x0e\x32\r.stip.Geocode\x12\n\n\x02id\x18\x03 \x02(\t\"\x12\n\x10\x41lbumCreateReply\"\x12\n\x10\x41lbumListRequest\"-\n\x0e\x41lbumListReply\x12\x1b\n\x06\x61lbums\x18\x01 \x03(\x0b\x32\x0b.stip.Album\"C\n\x10\x41lbumOpenRequest\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\" \n\x0e\x41lbumOpenReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\xae\x01\n\x06\x46ilter\x12\x14\n\x0c\x65ndTimestamp\x18\x01 \x01(\x03\x12\x0f\n\x07geohash\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x01\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x01\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0f\n\x07recurse\x18\x06 \x02(\x08\x12\x0e\n\x06source\x18\x07 \x01(\t\x12\x16\n\x0estartTimestamp\x18\x08 \x01(\x03\"\x9e\x01\n\x14\x44\x61taBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12*\n\x0b\x66illRequest\x18\x02 \x01(\x0b\x32\x15.stip.DataFillRequest\x12,\n\x0csplitRequest\x18\x03 \x01(\x0b\x32\x16.stip.DataSplitRequest\"\xd8\x02\n\x12\x44\x61taBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.DataBroadcastType\x12>\n\x0b\x66illReplies\x18\x02 \x03(\x0b\x32).stip.DataBroadcastReply.FillRepliesEntry\x12@\n\x0csplitReplies\x18\x03 \x03(\x0b\x32*.stip.DataBroadcastReply.SplitRepliesEntry\x1aG\n\x10\x46illRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.DataFillReply:\x02\x38\x01\x1aI\n\x11SplitRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.DataSplitReply:\x02\x38\x01\"k\n\x0f\x44\x61taFillRequest\x12\x1c\n\x06\x66ilter\x18\x01 \x02(\x0b\x32\x0c.stip.Filter\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\x12\x15\n\rwindowSeconds\x18\x04 \x02(\x03\"\x1f\n\rDataFillReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\x7f\n\x05Image\x12\x15\n\rcloudCoverage\x18\x01 \x01(\x01\x12\x0f\n\x07geohash\x18\x02 \x02(\t\x12\x19\n\x05\x66iles\x18\x03 \x03(\x0b\x32\n.stip.File\x12\x10\n\x08platform\x18\x04 \x02(\t\x12\x0e\n\x06source\x18\x05 \x02(\t\x12\x11\n\ttimestamp\x18\x06 \x02(\x03\"?\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x02(\t\x12\x15\n\rpixelCoverage\x18\x02 \x02(\x01\x12\x12\n\nsubdataset\x18\x03 \x02(\x05\">\n\x0f\x44\x61taListRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\"\x8c\x01\n\x0f\x44\x61taLoadRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x0c\n\x04glob\x18\x02 \x02(\t\x12$\n\nloadFormat\x18\x03 \x02(\x0e\x32\x10.stip.LoadFormat\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\" \n\rDataLoadReply\x12\x0f\n\x07task_id\x18\x01 \x02(\x04\"]\n\x06\x45xtent\x12\r\n\x05\x63ount\x18\x01 \x02(\r\x12\x0f\n\x07geohash\x18\x02 \x02(\t\x12\x10\n\x08platform\x18\x03 \x02(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06source\x18\x05 \x02(\t\"@\n\x11\x44\x61taSearchRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\"\x8d\x01\n\x10\x44\x61taSplitRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\x12\x14\n\x0cgeohashBound\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\" \n\x0e\x44\x61taSplitReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"5\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\r\x12\x0f\n\x07rpcAddr\x18\x02 \x02(\t\x12\x10\n\x08xferAddr\x18\x03 \x02(\t\"\x11\n\x0fNodeListRequest\"*\n\rNodeListReply\x12\x19\n\x05nodes\x18\x01 \x03(\x0b\x32\n.stip.Node\"p\n\x14TaskBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12*\n\x0blistRequest\x18\x02 \x01(\x0b\x32\x15.stip.TaskListRequest\"\xcb\x01\n\x12TaskBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12>\n\x0blistReplies\x18\x02 \x03(\x0b\x32).stip.TaskBroadcastReply.ListRepliesEntry\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.TaskListReply:\x02\x38\x01\"v\n\x04Task\x12\n\n\x02id\x18\x01 \x02(\x04\x12\x16\n\x0eitemsCompleted\x18\x02 \x02(\r\x12\x14\n\x0citemsSkipped\x18\x03 \x02(\r\x12\x12\n\nitemsTotal\x18\x04 \x02(\r\x12 \n\x06status\x18\x05 \x02(\x0e\x32\x10.stip.TaskStatus\"\x11\n\x0fTaskListRequest\"*\n\rTaskListReply\x12\x19\n\x05tasks\x18\x01 \x03(\x0b\x32\n.stip.Task*#\n\x0b\x41lbumStatus\x12\n\n\x06\x43LOSED\x10\x00\x12\x08\n\x04OPEN\x10\x01*$\n\x07Geocode\x12\x0b\n\x07GEOHASH\x10\x00\x12\x0c\n\x08QUADTILE\x10\x01*G\n\x12\x41lbumBroadcastType\x12\x10\n\x0c\x41LBUM_CREATE\x10\x00\x12\x0f\n\x0b\x41LBUM_CLOSE\x10\x01\x12\x0e\n\nALBUM_OPEN\x10\x02*(\n\x11\x44\x61taBroadcastType\x12\x08\n\x04\x46ILL\x10\x00\x12\t\n\x05SPLIT\x10\x01*/\n\nLoadFormat\x12\t\n\x05MODIS\x10\x00\x12\x08\n\x04NAIP\x10\x01\x12\x0c\n\x08SENTINEL\x10\x02*\"\n\x11TaskBroadcastType\x12\r\n\tTASK_LIST\x10\x00*4\n\nTaskStatus\x12\x0c\n\x08\x43OMPLETE\x10\x00\x12\x0b\n\x07\x46\x41ILURE\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x32\xb7\x02\n\x0f\x41lbumManagement\x12\x43\n\tBroadcast\x12\x1b.stip.AlbumBroadcastRequest\x1a\x19.stip.AlbumBroadcastReply\x12\x37\n\x05\x43lose\x12\x17.stip.AlbumCloseRequest\x1a\x15.stip.AlbumCloseReply\x12:\n\x06\x43reate\x12\x18.stip.AlbumCreateRequest\x1a\x16.stip.AlbumCreateReply\x12\x34\n\x04List\x12\x16.stip.AlbumListRequest\x1a\x14.stip.AlbumListReply\x12\x34\n\x04Open\x12\x16.stip.AlbumOpenRequest\x1a\x14.stip.AlbumOpenReply2\xd3\x02\n\x0e\x44\x61taManagement\x12\x41\n\tBroadcast\x12\x1a.stip.DataBroadcastRequest\x1a\x18.stip.DataBroadcastReply\x12\x32\n\x04\x46ill\x12\x15.stip.DataFillRequest\x1a\x13.stip.DataFillReply\x12,\n\x04List\x12\x15.stip.DataListRequest\x1a\x0b.stip.Image0\x01\x12\x32\n\x04Load\x12\x15.stip.DataLoadRequest\x1a\x13.stip.DataLoadReply\x12\x31\n\x06Search\x12\x17.stip.DataSearchRequest\x1a\x0c.stip.Extent0\x01\x12\x35\n\x05Split\x12\x16.stip.DataSplitRequest\x1a\x14.stip.DataSplitReply2D\n\x0eNodeManagement\x12\x32\n\x04List\x12\x15.stip.NodeListRequest\x1a\x13.stip.NodeListReply2\x87\x01\n\x0eTaskManagement\x12\x41\n\tBroadcast\x12\x1a.stip.TaskBroadcastRequest\x1a\x18.stip.TaskBroadcastReply\x12\x32\n\x04List\x12\x15.stip.TaskListRequest\x1a\x13.stip.TaskListReply'
 )
 
+_ALBUMSTATUS = _descriptor.EnumDescriptor(
+  name='AlbumStatus',
+  full_name='stip.AlbumStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CLOSED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OPEN', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3396,
+  serialized_end=3431,
+)
+_sym_db.RegisterEnumDescriptor(_ALBUMSTATUS)
+
+AlbumStatus = enum_type_wrapper.EnumTypeWrapper(_ALBUMSTATUS)
+_GEOCODE = _descriptor.EnumDescriptor(
+  name='Geocode',
+  full_name='stip.Geocode',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='GEOHASH', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='QUADTILE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3433,
+  serialized_end=3469,
+)
+_sym_db.RegisterEnumDescriptor(_GEOCODE)
+
+Geocode = enum_type_wrapper.EnumTypeWrapper(_GEOCODE)
+_ALBUMBROADCASTTYPE = _descriptor.EnumDescriptor(
+  name='AlbumBroadcastType',
+  full_name='stip.AlbumBroadcastType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ALBUM_CREATE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ALBUM_CLOSE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ALBUM_OPEN', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3471,
+  serialized_end=3542,
+)
+_sym_db.RegisterEnumDescriptor(_ALBUMBROADCASTTYPE)
+
+AlbumBroadcastType = enum_type_wrapper.EnumTypeWrapper(_ALBUMBROADCASTTYPE)
 _DATABROADCASTTYPE = _descriptor.EnumDescriptor(
   name='DataBroadcastType',
   full_name='stip.DataBroadcastType',
@@ -39,8 +112,8 @@ _DATABROADCASTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2288,
-  serialized_end=2328,
+  serialized_start=3544,
+  serialized_end=3584,
 )
 _sym_db.RegisterEnumDescriptor(_DATABROADCASTTYPE)
 
@@ -52,18 +125,22 @@ _LOADFORMAT = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='NAIP', index=0, number=0,
+      name='MODIS', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='SENTINEL', index=1, number=1,
+      name='NAIP', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SENTINEL', index=2, number=2,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2330,
-  serialized_end=2366,
+  serialized_start=3586,
+  serialized_end=3633,
 )
 _sym_db.RegisterEnumDescriptor(_LOADFORMAT)
 
@@ -81,8 +158,8 @@ _TASKBROADCASTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2368,
-  serialized_end=2402,
+  serialized_start=3635,
+  serialized_end=3669,
 )
 _sym_db.RegisterEnumDescriptor(_TASKBROADCASTTYPE)
 
@@ -108,16 +185,24 @@ _TASKSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2404,
-  serialized_end=2456,
+  serialized_start=3671,
+  serialized_end=3723,
 )
 _sym_db.RegisterEnumDescriptor(_TASKSTATUS)
 
 TaskStatus = enum_type_wrapper.EnumTypeWrapper(_TASKSTATUS)
+CLOSED = 0
+OPEN = 1
+GEOHASH = 0
+QUADTILE = 1
+ALBUM_CREATE = 0
+ALBUM_CLOSE = 1
+ALBUM_OPEN = 2
 FILL = 0
 SPLIT = 1
-NAIP = 0
-SENTINEL = 1
+MODIS = 0
+NAIP = 1
+SENTINEL = 2
 TASK_LIST = 0
 COMPLETE = 0
 FAILURE = 1
@@ -125,29 +210,351 @@ RUNNING = 2
 
 
 
-_NODE = _descriptor.Descriptor(
-  name='Node',
-  full_name='stip.Node',
+_ALBUM = _descriptor.Descriptor(
+  name='Album',
+  full_name='stip.Album',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='stip.Node.id', index=0,
-      number=1, type=13, cpp_type=3, label=2,
+      name='dhtKeyLength', full_name='stip.Album.dhtKeyLength', index=0,
+      number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rpcAddr', full_name='stip.Node.rpcAddr', index=1,
-      number=2, type=9, cpp_type=9, label=2,
+      name='geocode', full_name='stip.Album.geocode', index=1,
+      number=2, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='stip.Album.id', index=2,
+      number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='xferAddr', full_name='stip.Node.xferAddr', index=2,
+      name='status', full_name='stip.Album.status', index=3,
+      number=4, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=20,
+  serialized_end=128,
+)
+
+
+_ALBUMBROADCASTREQUEST = _descriptor.Descriptor(
+  name='AlbumBroadcastRequest',
+  full_name='stip.AlbumBroadcastRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='messageType', full_name='stip.AlbumBroadcastRequest.messageType', index=0,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='createRequest', full_name='stip.AlbumBroadcastRequest.createRequest', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='closeRequest', full_name='stip.AlbumBroadcastRequest.closeRequest', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='openRequest', full_name='stip.AlbumBroadcastRequest.openRequest', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=131,
+  serialized_end=342,
+)
+
+
+_ALBUMBROADCASTREPLY_CREATEREPLIESENTRY = _descriptor.Descriptor(
+  name='CreateRepliesEntry',
+  full_name='stip.AlbumBroadcastReply.CreateRepliesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stip.AlbumBroadcastReply.CreateRepliesEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stip.AlbumBroadcastReply.CreateRepliesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=616,
+  serialized_end=692,
+)
+
+_ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY = _descriptor.Descriptor(
+  name='CloseRepliesEntry',
+  full_name='stip.AlbumBroadcastReply.CloseRepliesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stip.AlbumBroadcastReply.CloseRepliesEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stip.AlbumBroadcastReply.CloseRepliesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=694,
+  serialized_end=768,
+)
+
+_ALBUMBROADCASTREPLY_OPENREPLIESENTRY = _descriptor.Descriptor(
+  name='OpenRepliesEntry',
+  full_name='stip.AlbumBroadcastReply.OpenRepliesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stip.AlbumBroadcastReply.OpenRepliesEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stip.AlbumBroadcastReply.OpenRepliesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=770,
+  serialized_end=842,
+)
+
+_ALBUMBROADCASTREPLY = _descriptor.Descriptor(
+  name='AlbumBroadcastReply',
+  full_name='stip.AlbumBroadcastReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='messageType', full_name='stip.AlbumBroadcastReply.messageType', index=0,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='createReplies', full_name='stip.AlbumBroadcastReply.createReplies', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='closeReplies', full_name='stip.AlbumBroadcastReply.closeReplies', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='openReplies', full_name='stip.AlbumBroadcastReply.openReplies', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ALBUMBROADCASTREPLY_CREATEREPLIESENTRY, _ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY, _ALBUMBROADCASTREPLY_OPENREPLIESENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=345,
+  serialized_end=842,
+)
+
+
+_ALBUMCLOSEREQUEST = _descriptor.Descriptor(
+  name='AlbumCloseRequest',
+  full_name='stip.AlbumCloseRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='stip.AlbumCloseRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=844,
+  serialized_end=875,
+)
+
+
+_ALBUMCLOSEREPLY = _descriptor.Descriptor(
+  name='AlbumCloseReply',
+  full_name='stip.AlbumCloseReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=877,
+  serialized_end=894,
+)
+
+
+_ALBUMCREATEREQUEST = _descriptor.Descriptor(
+  name='AlbumCreateRequest',
+  full_name='stip.AlbumCreateRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dhtKeyLength', full_name='stip.AlbumCreateRequest.dhtKeyLength', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='geocode', full_name='stip.AlbumCreateRequest.geocode', index=1,
+      number=2, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='stip.AlbumCreateRequest.id', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -165,14 +572,14 @@ _NODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20,
-  serialized_end=73,
+  serialized_start=896,
+  serialized_end=982,
 )
 
 
-_NODELISTREQUEST = _descriptor.Descriptor(
-  name='NodeListRequest',
-  full_name='stip.NodeListRequest',
+_ALBUMCREATEREPLY = _descriptor.Descriptor(
+  name='AlbumCreateReply',
+  full_name='stip.AlbumCreateReply',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -189,20 +596,44 @@ _NODELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=75,
-  serialized_end=92,
+  serialized_start=984,
+  serialized_end=1002,
 )
 
 
-_NODELISTREPLY = _descriptor.Descriptor(
-  name='NodeListReply',
-  full_name='stip.NodeListReply',
+_ALBUMLISTREQUEST = _descriptor.Descriptor(
+  name='AlbumListRequest',
+  full_name='stip.AlbumListRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1004,
+  serialized_end=1022,
+)
+
+
+_ALBUMLISTREPLY = _descriptor.Descriptor(
+  name='AlbumListReply',
+  full_name='stip.AlbumListReply',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nodes', full_name='stip.NodeListReply.nodes', index=0,
+      name='albums', full_name='stip.AlbumListReply.albums', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -220,21 +651,35 @@ _NODELISTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=94,
-  serialized_end=136,
+  serialized_start=1024,
+  serialized_end=1069,
 )
 
 
-_NODESHOWREQUEST = _descriptor.Descriptor(
-  name='NodeShowRequest',
-  full_name='stip.NodeShowRequest',
+_ALBUMOPENREQUEST = _descriptor.Descriptor(
+  name='AlbumOpenRequest',
+  full_name='stip.AlbumOpenRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='stip.NodeShowRequest.id', index=0,
-      number=1, type=13, cpp_type=3, label=2,
+      name='id', full_name='stip.AlbumOpenRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='taskId', full_name='stip.AlbumOpenRequest.taskId', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='threadCount', full_name='stip.AlbumOpenRequest.threadCount', index=2,
+      number=3, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -251,22 +696,22 @@ _NODESHOWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=167,
+  serialized_start=1071,
+  serialized_end=1138,
 )
 
 
-_NODESHOWREPLY = _descriptor.Descriptor(
-  name='NodeShowReply',
-  full_name='stip.NodeShowReply',
+_ALBUMOPENREPLY = _descriptor.Descriptor(
+  name='AlbumOpenReply',
+  full_name='stip.AlbumOpenReply',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='node', full_name='stip.NodeShowReply.node', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='taskId', full_name='stip.AlbumOpenReply.taskId', index=0,
+      number=1, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -282,8 +727,8 @@ _NODESHOWREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=169,
-  serialized_end=210,
+  serialized_start=1140,
+  serialized_end=1172,
 )
 
 
@@ -362,8 +807,8 @@ _FILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=213,
-  serialized_end=387,
+  serialized_start=1175,
+  serialized_end=1349,
 )
 
 
@@ -407,8 +852,8 @@ _DATABROADCASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=390,
-  serialized_end=548,
+  serialized_start=1352,
+  serialized_end=1510,
 )
 
 
@@ -445,8 +890,8 @@ _DATABROADCASTREPLY_FILLREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=749,
-  serialized_end=820,
+  serialized_start=1711,
+  serialized_end=1782,
 )
 
 _DATABROADCASTREPLY_SPLITREPLIESENTRY = _descriptor.Descriptor(
@@ -482,8 +927,8 @@ _DATABROADCASTREPLY_SPLITREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=822,
-  serialized_end=895,
+  serialized_start=1784,
+  serialized_end=1857,
 )
 
 _DATABROADCASTREPLY = _descriptor.Descriptor(
@@ -526,8 +971,8 @@ _DATABROADCASTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=551,
-  serialized_end=895,
+  serialized_start=1513,
+  serialized_end=1857,
 )
 
 
@@ -578,8 +1023,8 @@ _DATAFILLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=897,
-  serialized_end=1004,
+  serialized_start=1859,
+  serialized_end=1966,
 )
 
 
@@ -609,8 +1054,8 @@ _DATAFILLREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1006,
-  serialized_end=1037,
+  serialized_start=1968,
+  serialized_end=1999,
 )
 
 
@@ -675,8 +1120,8 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1166,
+  serialized_start=2001,
+  serialized_end=2128,
 )
 
 
@@ -688,23 +1133,23 @@ _FILE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='description', full_name='stip.File.description', index=0,
+      name='path', full_name='stip.File.path', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='path', full_name='stip.File.path', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='pixelCoverage', full_name='stip.File.pixelCoverage', index=1,
+      number=2, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pixelCoverage', full_name='stip.File.pixelCoverage', index=2,
-      number=3, type=1, cpp_type=5, label=2,
-      has_default_value=False, default_value=float(0),
+      name='subdataset', full_name='stip.File.subdataset', index=2,
+      number=3, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -720,8 +1165,8 @@ _FILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1232,
+  serialized_start=2130,
+  serialized_end=2193,
 )
 
 
@@ -733,8 +1178,15 @@ _DATALISTREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filter', full_name='stip.DataListRequest.filter', index=0,
-      number=1, type=11, cpp_type=10, label=2,
+      name='album', full_name='stip.DataListRequest.album', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='stip.DataListRequest.filter', index=1,
+      number=2, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -751,8 +1203,8 @@ _DATALISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1234,
-  serialized_end=1281,
+  serialized_start=2195,
+  serialized_end=2257,
 )
 
 
@@ -764,36 +1216,43 @@ _DATALOADREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='glob', full_name='stip.DataLoadRequest.glob', index=0,
+      name='album', full_name='stip.DataLoadRequest.album', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='loadFormat', full_name='stip.DataLoadRequest.loadFormat', index=1,
-      number=2, type=14, cpp_type=8, label=2,
+      name='glob', full_name='stip.DataLoadRequest.glob', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='loadFormat', full_name='stip.DataLoadRequest.loadFormat', index=2,
+      number=3, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='precision', full_name='stip.DataLoadRequest.precision', index=2,
-      number=3, type=13, cpp_type=3, label=2,
+      name='precision', full_name='stip.DataLoadRequest.precision', index=3,
+      number=4, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='taskId', full_name='stip.DataLoadRequest.taskId', index=3,
-      number=4, type=4, cpp_type=4, label=1,
+      name='taskId', full_name='stip.DataLoadRequest.taskId', index=4,
+      number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threadCount', full_name='stip.DataLoadRequest.threadCount', index=4,
-      number=5, type=13, cpp_type=3, label=2,
+      name='threadCount', full_name='stip.DataLoadRequest.threadCount', index=5,
+      number=6, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -810,8 +1269,8 @@ _DATALOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1283,
-  serialized_end=1408,
+  serialized_start=2260,
+  serialized_end=2400,
 )
 
 
@@ -841,8 +1300,8 @@ _DATALOADREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1410,
-  serialized_end=1442,
+  serialized_start=2402,
+  serialized_end=2434,
 )
 
 
@@ -900,8 +1359,8 @@ _EXTENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1444,
-  serialized_end=1537,
+  serialized_start=2436,
+  serialized_end=2529,
 )
 
 
@@ -913,8 +1372,15 @@ _DATASEARCHREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filter', full_name='stip.DataSearchRequest.filter', index=0,
-      number=1, type=11, cpp_type=10, label=2,
+      name='album', full_name='stip.DataSearchRequest.album', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='stip.DataSearchRequest.filter', index=1,
+      number=2, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -931,8 +1397,8 @@ _DATASEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1539,
-  serialized_end=1588,
+  serialized_start=2531,
+  serialized_end=2595,
 )
 
 
@@ -944,22 +1410,43 @@ _DATASPLITREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filter', full_name='stip.DataSplitRequest.filter', index=0,
-      number=1, type=11, cpp_type=10, label=2,
+      name='album', full_name='stip.DataSplitRequest.album', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='stip.DataSplitRequest.filter', index=1,
+      number=2, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='taskId', full_name='stip.DataSplitRequest.taskId', index=1,
-      number=2, type=4, cpp_type=4, label=1,
+      name='geohashBound', full_name='stip.DataSplitRequest.geohashBound', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='precision', full_name='stip.DataSplitRequest.precision', index=3,
+      number=4, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threadCount', full_name='stip.DataSplitRequest.threadCount', index=2,
-      number=3, type=13, cpp_type=3, label=2,
+      name='taskId', full_name='stip.DataSplitRequest.taskId', index=4,
+      number=5, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='threadCount', full_name='stip.DataSplitRequest.threadCount', index=5,
+      number=6, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -976,8 +1463,8 @@ _DATASPLITREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1590,
-  serialized_end=1675,
+  serialized_start=2598,
+  serialized_end=2739,
 )
 
 
@@ -1007,8 +1494,108 @@ _DATASPLITREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1677,
-  serialized_end=1709,
+  serialized_start=2741,
+  serialized_end=2773,
+)
+
+
+_NODE = _descriptor.Descriptor(
+  name='Node',
+  full_name='stip.Node',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='stip.Node.id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='rpcAddr', full_name='stip.Node.rpcAddr', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='xferAddr', full_name='stip.Node.xferAddr', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2775,
+  serialized_end=2828,
+)
+
+
+_NODELISTREQUEST = _descriptor.Descriptor(
+  name='NodeListRequest',
+  full_name='stip.NodeListRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2830,
+  serialized_end=2847,
+)
+
+
+_NODELISTREPLY = _descriptor.Descriptor(
+  name='NodeListReply',
+  full_name='stip.NodeListReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodes', full_name='stip.NodeListReply.nodes', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2849,
+  serialized_end=2891,
 )
 
 
@@ -1045,8 +1632,8 @@ _TASKBROADCASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1711,
-  serialized_end=1823,
+  serialized_start=2893,
+  serialized_end=3005,
 )
 
 
@@ -1083,8 +1670,8 @@ _TASKBROADCASTREPLY_LISTREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1958,
-  serialized_end=2029,
+  serialized_start=3140,
+  serialized_end=3211,
 )
 
 _TASKBROADCASTREPLY = _descriptor.Descriptor(
@@ -1120,8 +1707,8 @@ _TASKBROADCASTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1826,
-  serialized_end=2029,
+  serialized_start=3008,
+  serialized_end=3211,
 )
 
 
@@ -1179,8 +1766,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2031,
-  serialized_end=2149,
+  serialized_start=3213,
+  serialized_end=3331,
 )
 
 
@@ -1203,8 +1790,8 @@ _TASKLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2151,
-  serialized_end=2168,
+  serialized_start=3333,
+  serialized_end=3350,
 )
 
 
@@ -1234,74 +1821,28 @@ _TASKLISTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2170,
-  serialized_end=2212,
+  serialized_start=3352,
+  serialized_end=3394,
 )
 
-
-_TASKSHOWREQUEST = _descriptor.Descriptor(
-  name='TaskShowRequest',
-  full_name='stip.TaskShowRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='stip.TaskShowRequest.id', index=0,
-      number=1, type=4, cpp_type=4, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2214,
-  serialized_end=2243,
-)
-
-
-_TASKSHOWREPLY = _descriptor.Descriptor(
-  name='TaskShowReply',
-  full_name='stip.TaskShowReply',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='task', full_name='stip.TaskShowReply.task', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2245,
-  serialized_end=2286,
-)
-
-_NODELISTREPLY.fields_by_name['nodes'].message_type = _NODE
-_NODESHOWREPLY.fields_by_name['node'].message_type = _NODE
+_ALBUM.fields_by_name['geocode'].enum_type = _GEOCODE
+_ALBUM.fields_by_name['status'].enum_type = _ALBUMSTATUS
+_ALBUMBROADCASTREQUEST.fields_by_name['messageType'].enum_type = _ALBUMBROADCASTTYPE
+_ALBUMBROADCASTREQUEST.fields_by_name['createRequest'].message_type = _ALBUMCREATEREQUEST
+_ALBUMBROADCASTREQUEST.fields_by_name['closeRequest'].message_type = _ALBUMCLOSEREQUEST
+_ALBUMBROADCASTREQUEST.fields_by_name['openRequest'].message_type = _ALBUMOPENREQUEST
+_ALBUMBROADCASTREPLY_CREATEREPLIESENTRY.fields_by_name['value'].message_type = _ALBUMCREATEREPLY
+_ALBUMBROADCASTREPLY_CREATEREPLIESENTRY.containing_type = _ALBUMBROADCASTREPLY
+_ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY.fields_by_name['value'].message_type = _ALBUMCLOSEREPLY
+_ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY.containing_type = _ALBUMBROADCASTREPLY
+_ALBUMBROADCASTREPLY_OPENREPLIESENTRY.fields_by_name['value'].message_type = _ALBUMOPENREPLY
+_ALBUMBROADCASTREPLY_OPENREPLIESENTRY.containing_type = _ALBUMBROADCASTREPLY
+_ALBUMBROADCASTREPLY.fields_by_name['messageType'].enum_type = _ALBUMBROADCASTTYPE
+_ALBUMBROADCASTREPLY.fields_by_name['createReplies'].message_type = _ALBUMBROADCASTREPLY_CREATEREPLIESENTRY
+_ALBUMBROADCASTREPLY.fields_by_name['closeReplies'].message_type = _ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY
+_ALBUMBROADCASTREPLY.fields_by_name['openReplies'].message_type = _ALBUMBROADCASTREPLY_OPENREPLIESENTRY
+_ALBUMCREATEREQUEST.fields_by_name['geocode'].enum_type = _GEOCODE
+_ALBUMLISTREPLY.fields_by_name['albums'].message_type = _ALBUM
 _DATABROADCASTREQUEST.fields_by_name['messageType'].enum_type = _DATABROADCASTTYPE
 _DATABROADCASTREQUEST.fields_by_name['fillRequest'].message_type = _DATAFILLREQUEST
 _DATABROADCASTREQUEST.fields_by_name['splitRequest'].message_type = _DATASPLITREQUEST
@@ -1318,6 +1859,7 @@ _DATALISTREQUEST.fields_by_name['filter'].message_type = _FILTER
 _DATALOADREQUEST.fields_by_name['loadFormat'].enum_type = _LOADFORMAT
 _DATASEARCHREQUEST.fields_by_name['filter'].message_type = _FILTER
 _DATASPLITREQUEST.fields_by_name['filter'].message_type = _FILTER
+_NODELISTREPLY.fields_by_name['nodes'].message_type = _NODE
 _TASKBROADCASTREQUEST.fields_by_name['messageType'].enum_type = _TASKBROADCASTTYPE
 _TASKBROADCASTREQUEST.fields_by_name['listRequest'].message_type = _TASKLISTREQUEST
 _TASKBROADCASTREPLY_LISTREPLIESENTRY.fields_by_name['value'].message_type = _TASKLISTREPLY
@@ -1326,12 +1868,17 @@ _TASKBROADCASTREPLY.fields_by_name['messageType'].enum_type = _TASKBROADCASTTYPE
 _TASKBROADCASTREPLY.fields_by_name['listReplies'].message_type = _TASKBROADCASTREPLY_LISTREPLIESENTRY
 _TASK.fields_by_name['status'].enum_type = _TASKSTATUS
 _TASKLISTREPLY.fields_by_name['tasks'].message_type = _TASK
-_TASKSHOWREPLY.fields_by_name['task'].message_type = _TASK
-DESCRIPTOR.message_types_by_name['Node'] = _NODE
-DESCRIPTOR.message_types_by_name['NodeListRequest'] = _NODELISTREQUEST
-DESCRIPTOR.message_types_by_name['NodeListReply'] = _NODELISTREPLY
-DESCRIPTOR.message_types_by_name['NodeShowRequest'] = _NODESHOWREQUEST
-DESCRIPTOR.message_types_by_name['NodeShowReply'] = _NODESHOWREPLY
+DESCRIPTOR.message_types_by_name['Album'] = _ALBUM
+DESCRIPTOR.message_types_by_name['AlbumBroadcastRequest'] = _ALBUMBROADCASTREQUEST
+DESCRIPTOR.message_types_by_name['AlbumBroadcastReply'] = _ALBUMBROADCASTREPLY
+DESCRIPTOR.message_types_by_name['AlbumCloseRequest'] = _ALBUMCLOSEREQUEST
+DESCRIPTOR.message_types_by_name['AlbumCloseReply'] = _ALBUMCLOSEREPLY
+DESCRIPTOR.message_types_by_name['AlbumCreateRequest'] = _ALBUMCREATEREQUEST
+DESCRIPTOR.message_types_by_name['AlbumCreateReply'] = _ALBUMCREATEREPLY
+DESCRIPTOR.message_types_by_name['AlbumListRequest'] = _ALBUMLISTREQUEST
+DESCRIPTOR.message_types_by_name['AlbumListReply'] = _ALBUMLISTREPLY
+DESCRIPTOR.message_types_by_name['AlbumOpenRequest'] = _ALBUMOPENREQUEST
+DESCRIPTOR.message_types_by_name['AlbumOpenReply'] = _ALBUMOPENREPLY
 DESCRIPTOR.message_types_by_name['Filter'] = _FILTER
 DESCRIPTOR.message_types_by_name['DataBroadcastRequest'] = _DATABROADCASTREQUEST
 DESCRIPTOR.message_types_by_name['DataBroadcastReply'] = _DATABROADCASTREPLY
@@ -1346,53 +1893,123 @@ DESCRIPTOR.message_types_by_name['Extent'] = _EXTENT
 DESCRIPTOR.message_types_by_name['DataSearchRequest'] = _DATASEARCHREQUEST
 DESCRIPTOR.message_types_by_name['DataSplitRequest'] = _DATASPLITREQUEST
 DESCRIPTOR.message_types_by_name['DataSplitReply'] = _DATASPLITREPLY
+DESCRIPTOR.message_types_by_name['Node'] = _NODE
+DESCRIPTOR.message_types_by_name['NodeListRequest'] = _NODELISTREQUEST
+DESCRIPTOR.message_types_by_name['NodeListReply'] = _NODELISTREPLY
 DESCRIPTOR.message_types_by_name['TaskBroadcastRequest'] = _TASKBROADCASTREQUEST
 DESCRIPTOR.message_types_by_name['TaskBroadcastReply'] = _TASKBROADCASTREPLY
 DESCRIPTOR.message_types_by_name['Task'] = _TASK
 DESCRIPTOR.message_types_by_name['TaskListRequest'] = _TASKLISTREQUEST
 DESCRIPTOR.message_types_by_name['TaskListReply'] = _TASKLISTREPLY
-DESCRIPTOR.message_types_by_name['TaskShowRequest'] = _TASKSHOWREQUEST
-DESCRIPTOR.message_types_by_name['TaskShowReply'] = _TASKSHOWREPLY
+DESCRIPTOR.enum_types_by_name['AlbumStatus'] = _ALBUMSTATUS
+DESCRIPTOR.enum_types_by_name['Geocode'] = _GEOCODE
+DESCRIPTOR.enum_types_by_name['AlbumBroadcastType'] = _ALBUMBROADCASTTYPE
 DESCRIPTOR.enum_types_by_name['DataBroadcastType'] = _DATABROADCASTTYPE
 DESCRIPTOR.enum_types_by_name['LoadFormat'] = _LOADFORMAT
 DESCRIPTOR.enum_types_by_name['TaskBroadcastType'] = _TASKBROADCASTTYPE
 DESCRIPTOR.enum_types_by_name['TaskStatus'] = _TASKSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), {
-  'DESCRIPTOR' : _NODE,
+Album = _reflection.GeneratedProtocolMessageType('Album', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUM,
   '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.Node)
+  # @@protoc_insertion_point(class_scope:stip.Album)
   })
-_sym_db.RegisterMessage(Node)
+_sym_db.RegisterMessage(Album)
 
-NodeListRequest = _reflection.GeneratedProtocolMessageType('NodeListRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NODELISTREQUEST,
+AlbumBroadcastRequest = _reflection.GeneratedProtocolMessageType('AlbumBroadcastRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMBROADCASTREQUEST,
   '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.NodeListRequest)
+  # @@protoc_insertion_point(class_scope:stip.AlbumBroadcastRequest)
   })
-_sym_db.RegisterMessage(NodeListRequest)
+_sym_db.RegisterMessage(AlbumBroadcastRequest)
 
-NodeListReply = _reflection.GeneratedProtocolMessageType('NodeListReply', (_message.Message,), {
-  'DESCRIPTOR' : _NODELISTREPLY,
-  '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.NodeListReply)
-  })
-_sym_db.RegisterMessage(NodeListReply)
+AlbumBroadcastReply = _reflection.GeneratedProtocolMessageType('AlbumBroadcastReply', (_message.Message,), {
 
-NodeShowRequest = _reflection.GeneratedProtocolMessageType('NodeShowRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NODESHOWREQUEST,
-  '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.NodeShowRequest)
-  })
-_sym_db.RegisterMessage(NodeShowRequest)
+  'CreateRepliesEntry' : _reflection.GeneratedProtocolMessageType('CreateRepliesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _ALBUMBROADCASTREPLY_CREATEREPLIESENTRY,
+    '__module__' : 'stip_pb2'
+    # @@protoc_insertion_point(class_scope:stip.AlbumBroadcastReply.CreateRepliesEntry)
+    })
+  ,
 
-NodeShowReply = _reflection.GeneratedProtocolMessageType('NodeShowReply', (_message.Message,), {
-  'DESCRIPTOR' : _NODESHOWREPLY,
+  'CloseRepliesEntry' : _reflection.GeneratedProtocolMessageType('CloseRepliesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY,
+    '__module__' : 'stip_pb2'
+    # @@protoc_insertion_point(class_scope:stip.AlbumBroadcastReply.CloseRepliesEntry)
+    })
+  ,
+
+  'OpenRepliesEntry' : _reflection.GeneratedProtocolMessageType('OpenRepliesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _ALBUMBROADCASTREPLY_OPENREPLIESENTRY,
+    '__module__' : 'stip_pb2'
+    # @@protoc_insertion_point(class_scope:stip.AlbumBroadcastReply.OpenRepliesEntry)
+    })
+  ,
+  'DESCRIPTOR' : _ALBUMBROADCASTREPLY,
   '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.NodeShowReply)
+  # @@protoc_insertion_point(class_scope:stip.AlbumBroadcastReply)
   })
-_sym_db.RegisterMessage(NodeShowReply)
+_sym_db.RegisterMessage(AlbumBroadcastReply)
+_sym_db.RegisterMessage(AlbumBroadcastReply.CreateRepliesEntry)
+_sym_db.RegisterMessage(AlbumBroadcastReply.CloseRepliesEntry)
+_sym_db.RegisterMessage(AlbumBroadcastReply.OpenRepliesEntry)
+
+AlbumCloseRequest = _reflection.GeneratedProtocolMessageType('AlbumCloseRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMCLOSEREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumCloseRequest)
+  })
+_sym_db.RegisterMessage(AlbumCloseRequest)
+
+AlbumCloseReply = _reflection.GeneratedProtocolMessageType('AlbumCloseReply', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMCLOSEREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumCloseReply)
+  })
+_sym_db.RegisterMessage(AlbumCloseReply)
+
+AlbumCreateRequest = _reflection.GeneratedProtocolMessageType('AlbumCreateRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMCREATEREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumCreateRequest)
+  })
+_sym_db.RegisterMessage(AlbumCreateRequest)
+
+AlbumCreateReply = _reflection.GeneratedProtocolMessageType('AlbumCreateReply', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMCREATEREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumCreateReply)
+  })
+_sym_db.RegisterMessage(AlbumCreateReply)
+
+AlbumListRequest = _reflection.GeneratedProtocolMessageType('AlbumListRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMLISTREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumListRequest)
+  })
+_sym_db.RegisterMessage(AlbumListRequest)
+
+AlbumListReply = _reflection.GeneratedProtocolMessageType('AlbumListReply', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMLISTREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumListReply)
+  })
+_sym_db.RegisterMessage(AlbumListReply)
+
+AlbumOpenRequest = _reflection.GeneratedProtocolMessageType('AlbumOpenRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMOPENREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumOpenRequest)
+  })
+_sym_db.RegisterMessage(AlbumOpenRequest)
+
+AlbumOpenReply = _reflection.GeneratedProtocolMessageType('AlbumOpenReply', (_message.Message,), {
+  'DESCRIPTOR' : _ALBUMOPENREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.AlbumOpenReply)
+  })
+_sym_db.RegisterMessage(AlbumOpenReply)
 
 Filter = _reflection.GeneratedProtocolMessageType('Filter', (_message.Message,), {
   'DESCRIPTOR' : _FILTER,
@@ -1508,6 +2125,27 @@ DataSplitReply = _reflection.GeneratedProtocolMessageType('DataSplitReply', (_me
   })
 _sym_db.RegisterMessage(DataSplitReply)
 
+Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), {
+  'DESCRIPTOR' : _NODE,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.Node)
+  })
+_sym_db.RegisterMessage(Node)
+
+NodeListRequest = _reflection.GeneratedProtocolMessageType('NodeListRequest', (_message.Message,), {
+  'DESCRIPTOR' : _NODELISTREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.NodeListRequest)
+  })
+_sym_db.RegisterMessage(NodeListRequest)
+
+NodeListReply = _reflection.GeneratedProtocolMessageType('NodeListReply', (_message.Message,), {
+  'DESCRIPTOR' : _NODELISTREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.NodeListReply)
+  })
+_sym_db.RegisterMessage(NodeListReply)
+
 TaskBroadcastRequest = _reflection.GeneratedProtocolMessageType('TaskBroadcastRequest', (_message.Message,), {
   'DESCRIPTOR' : _TASKBROADCASTREQUEST,
   '__module__' : 'stip_pb2'
@@ -1551,56 +2189,72 @@ TaskListReply = _reflection.GeneratedProtocolMessageType('TaskListReply', (_mess
   })
 _sym_db.RegisterMessage(TaskListReply)
 
-TaskShowRequest = _reflection.GeneratedProtocolMessageType('TaskShowRequest', (_message.Message,), {
-  'DESCRIPTOR' : _TASKSHOWREQUEST,
-  '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.TaskShowRequest)
-  })
-_sym_db.RegisterMessage(TaskShowRequest)
 
-TaskShowReply = _reflection.GeneratedProtocolMessageType('TaskShowReply', (_message.Message,), {
-  'DESCRIPTOR' : _TASKSHOWREPLY,
-  '__module__' : 'stip_pb2'
-  # @@protoc_insertion_point(class_scope:stip.TaskShowReply)
-  })
-_sym_db.RegisterMessage(TaskShowReply)
-
-
+_ALBUMBROADCASTREPLY_CREATEREPLIESENTRY._options = None
+_ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY._options = None
+_ALBUMBROADCASTREPLY_OPENREPLIESENTRY._options = None
 _DATABROADCASTREPLY_FILLREPLIESENTRY._options = None
 _DATABROADCASTREPLY_SPLITREPLIESENTRY._options = None
 _TASKBROADCASTREPLY_LISTREPLIESENTRY._options = None
 
-_CLUSTERMANAGEMENT = _descriptor.ServiceDescriptor(
-  name='ClusterManagement',
-  full_name='stip.ClusterManagement',
+_ALBUMMANAGEMENT = _descriptor.ServiceDescriptor(
+  name='AlbumManagement',
+  full_name='stip.AlbumManagement',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2459,
-  serialized_end=2590,
+  serialized_start=3726,
+  serialized_end=4037,
   methods=[
   _descriptor.MethodDescriptor(
-    name='NodeList',
-    full_name='stip.ClusterManagement.NodeList',
+    name='Broadcast',
+    full_name='stip.AlbumManagement.Broadcast',
     index=0,
     containing_service=None,
-    input_type=_NODELISTREQUEST,
-    output_type=_NODELISTREPLY,
+    input_type=_ALBUMBROADCASTREQUEST,
+    output_type=_ALBUMBROADCASTREPLY,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='NodeShow',
-    full_name='stip.ClusterManagement.NodeShow',
+    name='Close',
+    full_name='stip.AlbumManagement.Close',
     index=1,
     containing_service=None,
-    input_type=_NODESHOWREQUEST,
-    output_type=_NODESHOWREPLY,
+    input_type=_ALBUMCLOSEREQUEST,
+    output_type=_ALBUMCLOSEREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Create',
+    full_name='stip.AlbumManagement.Create',
+    index=2,
+    containing_service=None,
+    input_type=_ALBUMCREATEREQUEST,
+    output_type=_ALBUMCREATEREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='stip.AlbumManagement.List',
+    index=3,
+    containing_service=None,
+    input_type=_ALBUMLISTREQUEST,
+    output_type=_ALBUMLISTREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Open',
+    full_name='stip.AlbumManagement.Open',
+    index=4,
+    containing_service=None,
+    input_type=_ALBUMOPENREQUEST,
+    output_type=_ALBUMOPENREPLY,
     serialized_options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_CLUSTERMANAGEMENT)
+_sym_db.RegisterServiceDescriptor(_ALBUMMANAGEMENT)
 
-DESCRIPTOR.services_by_name['ClusterManagement'] = _CLUSTERMANAGEMENT
+DESCRIPTOR.services_by_name['AlbumManagement'] = _ALBUMMANAGEMENT
 
 
 _DATAMANAGEMENT = _descriptor.ServiceDescriptor(
@@ -1609,8 +2263,8 @@ _DATAMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=2593,
-  serialized_end=2932,
+  serialized_start=4040,
+  serialized_end=4379,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',
@@ -1672,14 +2326,38 @@ _sym_db.RegisterServiceDescriptor(_DATAMANAGEMENT)
 DESCRIPTOR.services_by_name['DataManagement'] = _DATAMANAGEMENT
 
 
+_NODEMANAGEMENT = _descriptor.ServiceDescriptor(
+  name='NodeManagement',
+  full_name='stip.NodeManagement',
+  file=DESCRIPTOR,
+  index=2,
+  serialized_options=None,
+  serialized_start=4381,
+  serialized_end=4449,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='stip.NodeManagement.List',
+    index=0,
+    containing_service=None,
+    input_type=_NODELISTREQUEST,
+    output_type=_NODELISTREPLY,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_NODEMANAGEMENT)
+
+DESCRIPTOR.services_by_name['NodeManagement'] = _NODEMANAGEMENT
+
+
 _TASKMANAGEMENT = _descriptor.ServiceDescriptor(
   name='TaskManagement',
   full_name='stip.TaskManagement',
   file=DESCRIPTOR,
-  index=2,
+  index=3,
   serialized_options=None,
-  serialized_start=2935,
-  serialized_end=3122,
+  serialized_start=4452,
+  serialized_end=4587,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',
@@ -1697,15 +2375,6 @@ _TASKMANAGEMENT = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_TASKLISTREQUEST,
     output_type=_TASKLISTREPLY,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Show',
-    full_name='stip.TaskManagement.Show',
-    index=2,
-    containing_service=None,
-    input_type=_TASKSHOWREQUEST,
-    output_type=_TASKSHOWREPLY,
     serialized_options=None,
   ),
 ])

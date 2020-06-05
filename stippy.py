@@ -6,13 +6,13 @@ import stip_pb2_grpc
 def list_nodes(host_addr):
     # open ClusterManagementStub
     channel = grpc.insecure_channel(host_addr)
-    stub = stip_pb2_grpc.ClusterManagementStub(channel)
+    stub = stip_pb2_grpc.NodeManagementStub(channel)
 
     # initialize request
     request = stip_pb2.NodeListRequest()
 
     # submit request
-    response = stub.NodeList(request)
+    response = stub.List(request)
 
     # close channel
     channel.close()
@@ -66,7 +66,7 @@ class ImageIterator:
 
         return (self.nodes[self.node_index-1], item)
 
-def list_node_images(host_addr, end_timestamp=None, geohash=None,
+def list_node_images(host_addr, album, end_timestamp=None, geohash=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
     # initialize request
@@ -82,6 +82,7 @@ def list_node_images(host_addr, end_timestamp=None, geohash=None,
         )
 
     request = stip_pb2.DataListRequest(
+            album=album,
             filter=filter,
         )
 
@@ -97,7 +98,7 @@ def list_node_images(host_addr, end_timestamp=None, geohash=None,
     # return new ImageIterator
     return ImageIterator(request, [host_node])
 
-def list_images(host_addr, end_timestamp=None, geohash=None,
+def list_images(host_addr, album, end_timestamp=None, geohash=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
     # initialize request
@@ -113,6 +114,7 @@ def list_images(host_addr, end_timestamp=None, geohash=None,
         )
 
     request = stip_pb2.DataListRequest(
+            album=album,
             filter=filter,
         )
 

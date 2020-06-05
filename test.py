@@ -12,7 +12,9 @@ if __name__ == '__main__':
 
     # print images for geohash '9xj6t'
     print('-----IMAGES-----')
-    image_iter = stippy.list_images(host_addr, geohash='9xj6t')
+    image_iter = stippy.list_images(host_addr,
+        'naip-test', geohash='9xjqcw')
+
     for (node, image) in image_iter:
         print(str(node.id) + ' ' + image.platform + ' ' + image.geohash
             + ' ' + image.source + ' ' + str(image.timestamp))
@@ -21,12 +23,14 @@ if __name__ == '__main__':
             print('    ' + file.path)
 
     # print images from only the queried 
-    # node for all geohashes starting with '9xh'
+    #   node for all geohashes starting with '9xh'
     print('-----NODE IMAGES-----')
-    image_iter = stippy.list_node_images(host_addr, recurse=True, geohash='9xh')
+    image_iter = stippy.list_node_images(host_addr,
+        'modis-test', recurse=True, geohash='9q')
+
     for (node, image) in image_iter:
         print(str(node.id) + ' ' + image.platform + ' ' + image.geohash
             + ' ' + image.source + ' ' + str(image.timestamp))
 
         for file in image.files:
-            print('    ' + file.description)
+            print('    ' + str(file.subdataset))
