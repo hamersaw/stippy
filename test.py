@@ -13,10 +13,10 @@ if __name__ == '__main__':
     # print images for geohash '9xj6t'
     print('-----IMAGES-----')
     image_iter = stippy.list_images(host_addr,
-        'naip-test', geohash='9xjqcw')
+        'test', geocode='9xjqcw')
 
     for (node, image) in image_iter:
-        print(str(node.id) + ' ' + image.platform + ' ' + image.geohash
+        print(str(node.id) + ' ' + image.platform + ' ' + image.geocode
             + ' ' + image.source + ' ' + str(image.timestamp))
 
         for file in image.files:
@@ -26,10 +26,10 @@ if __name__ == '__main__':
     #   node for all geohashes starting with '9xh'
     print('-----NODE IMAGES-----')
     image_iter = stippy.list_node_images(host_addr,
-        'modis-test', recurse=True, geohash='9q')
+        'test', recurse=True, geocode='9q')
 
     for (node, image) in image_iter:
-        print(str(node.id) + ' ' + image.platform + ' ' + image.geohash
+        print(str(node.id) + ' ' + image.platform + ' ' + image.geocode
             + ' ' + image.source + ' ' + str(image.timestamp))
 
         for file in image.files:

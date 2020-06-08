@@ -198,9 +198,9 @@ class AlbumManagement(object):
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
-class DataManagementStub(object):
+class ImageManagementStub(object):
     """
-    DataManagement Service
+    ImageManagement Service
     """
 
     def __init__(self, channel):
@@ -210,40 +210,40 @@ class DataManagementStub(object):
             channel: A grpc.Channel.
         """
         self.Broadcast = channel.unary_unary(
-                '/stip.DataManagement/Broadcast',
-                request_serializer=stip__pb2.DataBroadcastRequest.SerializeToString,
-                response_deserializer=stip__pb2.DataBroadcastReply.FromString,
+                '/stip.ImageManagement/Broadcast',
+                request_serializer=stip__pb2.ImageBroadcastRequest.SerializeToString,
+                response_deserializer=stip__pb2.ImageBroadcastReply.FromString,
                 )
         self.Fill = channel.unary_unary(
-                '/stip.DataManagement/Fill',
-                request_serializer=stip__pb2.DataFillRequest.SerializeToString,
-                response_deserializer=stip__pb2.DataFillReply.FromString,
+                '/stip.ImageManagement/Fill',
+                request_serializer=stip__pb2.ImageFillRequest.SerializeToString,
+                response_deserializer=stip__pb2.ImageFillReply.FromString,
                 )
         self.List = channel.unary_stream(
-                '/stip.DataManagement/List',
-                request_serializer=stip__pb2.DataListRequest.SerializeToString,
+                '/stip.ImageManagement/List',
+                request_serializer=stip__pb2.ImageListRequest.SerializeToString,
                 response_deserializer=stip__pb2.Image.FromString,
                 )
-        self.Load = channel.unary_unary(
-                '/stip.DataManagement/Load',
-                request_serializer=stip__pb2.DataLoadRequest.SerializeToString,
-                response_deserializer=stip__pb2.DataLoadReply.FromString,
+        self.Store = channel.unary_unary(
+                '/stip.ImageManagement/Store',
+                request_serializer=stip__pb2.ImageStoreRequest.SerializeToString,
+                response_deserializer=stip__pb2.ImageStoreReply.FromString,
                 )
         self.Search = channel.unary_stream(
-                '/stip.DataManagement/Search',
-                request_serializer=stip__pb2.DataSearchRequest.SerializeToString,
+                '/stip.ImageManagement/Search',
+                request_serializer=stip__pb2.ImageSearchRequest.SerializeToString,
                 response_deserializer=stip__pb2.Extent.FromString,
                 )
         self.Split = channel.unary_unary(
-                '/stip.DataManagement/Split',
-                request_serializer=stip__pb2.DataSplitRequest.SerializeToString,
-                response_deserializer=stip__pb2.DataSplitReply.FromString,
+                '/stip.ImageManagement/Split',
+                request_serializer=stip__pb2.ImageSplitRequest.SerializeToString,
+                response_deserializer=stip__pb2.ImageSplitReply.FromString,
                 )
 
 
-class DataManagementServicer(object):
+class ImageManagementServicer(object):
     """
-    DataManagement Service
+    ImageManagement Service
     """
 
     def Broadcast(self, request, context):
@@ -264,7 +264,7 @@ class DataManagementServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Load(self, request, context):
+    def Store(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -283,48 +283,48 @@ class DataManagementServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_DataManagementServicer_to_server(servicer, server):
+def add_ImageManagementServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Broadcast': grpc.unary_unary_rpc_method_handler(
                     servicer.Broadcast,
-                    request_deserializer=stip__pb2.DataBroadcastRequest.FromString,
-                    response_serializer=stip__pb2.DataBroadcastReply.SerializeToString,
+                    request_deserializer=stip__pb2.ImageBroadcastRequest.FromString,
+                    response_serializer=stip__pb2.ImageBroadcastReply.SerializeToString,
             ),
             'Fill': grpc.unary_unary_rpc_method_handler(
                     servicer.Fill,
-                    request_deserializer=stip__pb2.DataFillRequest.FromString,
-                    response_serializer=stip__pb2.DataFillReply.SerializeToString,
+                    request_deserializer=stip__pb2.ImageFillRequest.FromString,
+                    response_serializer=stip__pb2.ImageFillReply.SerializeToString,
             ),
             'List': grpc.unary_stream_rpc_method_handler(
                     servicer.List,
-                    request_deserializer=stip__pb2.DataListRequest.FromString,
+                    request_deserializer=stip__pb2.ImageListRequest.FromString,
                     response_serializer=stip__pb2.Image.SerializeToString,
             ),
-            'Load': grpc.unary_unary_rpc_method_handler(
-                    servicer.Load,
-                    request_deserializer=stip__pb2.DataLoadRequest.FromString,
-                    response_serializer=stip__pb2.DataLoadReply.SerializeToString,
+            'Store': grpc.unary_unary_rpc_method_handler(
+                    servicer.Store,
+                    request_deserializer=stip__pb2.ImageStoreRequest.FromString,
+                    response_serializer=stip__pb2.ImageStoreReply.SerializeToString,
             ),
             'Search': grpc.unary_stream_rpc_method_handler(
                     servicer.Search,
-                    request_deserializer=stip__pb2.DataSearchRequest.FromString,
+                    request_deserializer=stip__pb2.ImageSearchRequest.FromString,
                     response_serializer=stip__pb2.Extent.SerializeToString,
             ),
             'Split': grpc.unary_unary_rpc_method_handler(
                     servicer.Split,
-                    request_deserializer=stip__pb2.DataSplitRequest.FromString,
-                    response_serializer=stip__pb2.DataSplitReply.SerializeToString,
+                    request_deserializer=stip__pb2.ImageSplitRequest.FromString,
+                    response_serializer=stip__pb2.ImageSplitReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'stip.DataManagement', rpc_method_handlers)
+            'stip.ImageManagement', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class DataManagement(object):
+class ImageManagement(object):
     """
-    DataManagement Service
+    ImageManagement Service
     """
 
     @staticmethod
@@ -337,9 +337,9 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.DataManagement/Broadcast',
-            stip__pb2.DataBroadcastRequest.SerializeToString,
-            stip__pb2.DataBroadcastReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/stip.ImageManagement/Broadcast',
+            stip__pb2.ImageBroadcastRequest.SerializeToString,
+            stip__pb2.ImageBroadcastReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -353,9 +353,9 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.DataManagement/Fill',
-            stip__pb2.DataFillRequest.SerializeToString,
-            stip__pb2.DataFillReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/stip.ImageManagement/Fill',
+            stip__pb2.ImageFillRequest.SerializeToString,
+            stip__pb2.ImageFillReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -369,14 +369,14 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/stip.DataManagement/List',
-            stip__pb2.DataListRequest.SerializeToString,
+        return grpc.experimental.unary_stream(request, target, '/stip.ImageManagement/List',
+            stip__pb2.ImageListRequest.SerializeToString,
             stip__pb2.Image.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Load(request,
+    def Store(request,
             target,
             options=(),
             channel_credentials=None,
@@ -385,9 +385,9 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.DataManagement/Load',
-            stip__pb2.DataLoadRequest.SerializeToString,
-            stip__pb2.DataLoadReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/stip.ImageManagement/Store',
+            stip__pb2.ImageStoreRequest.SerializeToString,
+            stip__pb2.ImageStoreReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -401,8 +401,8 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/stip.DataManagement/Search',
-            stip__pb2.DataSearchRequest.SerializeToString,
+        return grpc.experimental.unary_stream(request, target, '/stip.ImageManagement/Search',
+            stip__pb2.ImageSearchRequest.SerializeToString,
             stip__pb2.Extent.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -417,9 +417,9 @@ class DataManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stip.DataManagement/Split',
-            stip__pb2.DataSplitRequest.SerializeToString,
-            stip__pb2.DataSplitReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/stip.ImageManagement/Split',
+            stip__pb2.ImageSplitRequest.SerializeToString,
+            stip__pb2.ImageSplitReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 

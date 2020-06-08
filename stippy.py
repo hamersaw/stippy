@@ -45,7 +45,7 @@ class ImageIterator:
             # open iterator stream to next addr
             node = self.nodes[self.node_index]
             self.channel = grpc.insecure_channel(node.rpcAddr)
-            stub = stip_pb2_grpc.DataManagementStub(self.channel)
+            stub = stip_pb2_grpc.ImageManagementStub(self.channel)
             self.it = stub.List(self.request)
 
             # read next item
@@ -66,13 +66,13 @@ class ImageIterator:
 
         return (self.nodes[self.node_index-1], item)
 
-def list_node_images(host_addr, album, end_timestamp=None, geohash=None,
+def list_node_images(host_addr, album, end_timestamp=None, geocode=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
     # initialize request
     filter = stip_pb2.Filter(
             endTimestamp=end_timestamp,
-            geohash=geohash,
+            geocode=geocode,
             maxCloudCoverage=max_cloud_coverage,
             minPixelCoverage=min_pixel_coverage,
             platform=platform,
@@ -81,7 +81,7 @@ def list_node_images(host_addr, album, end_timestamp=None, geohash=None,
             startTimestamp=start_timestamp,
         )
 
-    request = stip_pb2.DataListRequest(
+    request = stip_pb2.ImageListRequest(
             album=album,
             filter=filter,
         )
@@ -98,13 +98,13 @@ def list_node_images(host_addr, album, end_timestamp=None, geohash=None,
     # return new ImageIterator
     return ImageIterator(request, [host_node])
 
-def list_images(host_addr, album, end_timestamp=None, geohash=None,
+def list_images(host_addr, album, end_timestamp=None, geocode=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
     # initialize request
     filter = stip_pb2.Filter(
             endTimestamp=end_timestamp,
-            geohash=geohash,
+            geocode=geocode,
             maxCloudCoverage=max_cloud_coverage,
             minPixelCoverage=min_pixel_coverage,
             platform=platform,
@@ -113,7 +113,7 @@ def list_images(host_addr, album, end_timestamp=None, geohash=None,
             startTimestamp=start_timestamp,
         )
 
-    request = stip_pb2.DataListRequest(
+    request = stip_pb2.ImageListRequest(
             album=album,
             filter=filter,
         )

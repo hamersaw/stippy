@@ -29,7 +29,7 @@ The test.py file at the root of the projects contains a few examples outlining b
 
     message Image {
         optional double cloudCoverage = 1;
-        required string geohash = 2;
+        required string geocode = 2;
         repeated File files = 3;
         required string platform = 4;
         required string source = 5;
