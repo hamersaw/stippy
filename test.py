@@ -10,17 +10,14 @@ if __name__ == '__main__':
     for node in nodes:
         print(str(node.id) + ' ' + node.rpcAddr + ' ' + node.xferAddr)
 
-    # print images for geohash '9xj6t'
-    print('-----IMAGES-----')
-    image_iter = stippy.list_images(host_addr,
-        'test', geocode='9xjqcw')
+    # print cluster extents starting with geohash '9q6'
+    print('-----EXTENTS-----')
+    extent_iter = stippy.list_extents(host_addr,
+        'test', geocode='9q6', recurse=True)
 
-    for (node, image) in image_iter:
-        print(str(node.id) + ' ' + image.platform + ' ' + image.geocode
-            + ' ' + image.source + ' ' + str(image.timestamp))
-
-        for file in image.files:
-            print('    ' + file.path)
+    for (node, extent) in extent_iter:
+        print(str(node.id) + ' ' + extent.platform + ' ' + extent.geocode
+            + ' ' + extent.source + ' ' + str(extent.count))
 
     # print images from only the queried 
     #   node for all geohashes starting with '9xh'

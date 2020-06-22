@@ -214,6 +214,11 @@ class ImageManagementStub(object):
                 request_serializer=stip__pb2.ImageBroadcastRequest.SerializeToString,
                 response_deserializer=stip__pb2.ImageBroadcastReply.FromString,
                 )
+        self.Coalesce = channel.unary_unary(
+                '/stip.ImageManagement/Coalesce',
+                request_serializer=stip__pb2.ImageCoalesceRequest.SerializeToString,
+                response_deserializer=stip__pb2.ImageCoalesceReply.FromString,
+                )
         self.Fill = channel.unary_unary(
                 '/stip.ImageManagement/Fill',
                 request_serializer=stip__pb2.ImageFillRequest.SerializeToString,
@@ -247,6 +252,12 @@ class ImageManagementServicer(object):
     """
 
     def Broadcast(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Coalesce(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -289,6 +300,11 @@ def add_ImageManagementServicer_to_server(servicer, server):
                     servicer.Broadcast,
                     request_deserializer=stip__pb2.ImageBroadcastRequest.FromString,
                     response_serializer=stip__pb2.ImageBroadcastReply.SerializeToString,
+            ),
+            'Coalesce': grpc.unary_unary_rpc_method_handler(
+                    servicer.Coalesce,
+                    request_deserializer=stip__pb2.ImageCoalesceRequest.FromString,
+                    response_serializer=stip__pb2.ImageCoalesceReply.SerializeToString,
             ),
             'Fill': grpc.unary_unary_rpc_method_handler(
                     servicer.Fill,
@@ -340,6 +356,22 @@ class ImageManagement(object):
         return grpc.experimental.unary_unary(request, target, '/stip.ImageManagement/Broadcast',
             stip__pb2.ImageBroadcastRequest.SerializeToString,
             stip__pb2.ImageBroadcastReply.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Coalesce(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stip.ImageManagement/Coalesce',
+            stip__pb2.ImageCoalesceRequest.SerializeToString,
+            stip__pb2.ImageCoalesceReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -506,6 +538,11 @@ class TaskManagementStub(object):
                 request_serializer=stip__pb2.TaskBroadcastRequest.SerializeToString,
                 response_deserializer=stip__pb2.TaskBroadcastReply.FromString,
                 )
+        self.Clear = channel.unary_unary(
+                '/stip.TaskManagement/Clear',
+                request_serializer=stip__pb2.TaskClearRequest.SerializeToString,
+                response_deserializer=stip__pb2.TaskClearReply.FromString,
+                )
         self.List = channel.unary_unary(
                 '/stip.TaskManagement/List',
                 request_serializer=stip__pb2.TaskListRequest.SerializeToString,
@@ -524,6 +561,12 @@ class TaskManagementServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Clear(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def List(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -537,6 +580,11 @@ def add_TaskManagementServicer_to_server(servicer, server):
                     servicer.Broadcast,
                     request_deserializer=stip__pb2.TaskBroadcastRequest.FromString,
                     response_serializer=stip__pb2.TaskBroadcastReply.SerializeToString,
+            ),
+            'Clear': grpc.unary_unary_rpc_method_handler(
+                    servicer.Clear,
+                    request_deserializer=stip__pb2.TaskClearRequest.FromString,
+                    response_serializer=stip__pb2.TaskClearReply.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
@@ -568,6 +616,22 @@ class TaskManagement(object):
         return grpc.experimental.unary_unary(request, target, '/stip.TaskManagement/Broadcast',
             stip__pb2.TaskBroadcastRequest.SerializeToString,
             stip__pb2.TaskBroadcastReply.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Clear(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stip.TaskManagement/Clear',
+            stip__pb2.TaskClearRequest.SerializeToString,
+            stip__pb2.TaskClearReply.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 

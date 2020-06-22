@@ -43,4 +43,4 @@ The test.py file at the root of the projects contains a few examples outlining b
     }
 
 ## TODO
-- get_node_geohashes(...) - returns lists of geohashes at each node
+- include full protobuf RPC functinality: album list, image search, etc

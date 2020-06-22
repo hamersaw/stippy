@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='stip',
   syntax='proto2',
   serialized_options=None,
-  serialized_pb=b'\n\nstip.proto\x12\x04stip\"l\n\x05\x41lbum\x12\x14\n\x0c\x64htKeyLength\x18\x01 \x02(\x05\x12\x1e\n\x07geocode\x18\x02 \x02(\x0e\x32\r.stip.Geocode\x12\n\n\x02id\x18\x03 \x02(\t\x12!\n\x06status\x18\x04 \x02(\x0e\x32\x11.stip.AlbumStatus\"\xd3\x01\n\x15\x41lbumBroadcastRequest\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.AlbumBroadcastType\x12/\n\rcreateRequest\x18\x02 \x01(\x0b\x32\x18.stip.AlbumCreateRequest\x12-\n\x0c\x63loseRequest\x18\x03 \x01(\x0b\x32\x17.stip.AlbumCloseRequest\x12+\n\x0bopenRequest\x18\x04 \x01(\x0b\x32\x16.stip.AlbumOpenRequest\"\xf1\x03\n\x13\x41lbumBroadcastReply\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.AlbumBroadcastType\x12\x43\n\rcreateReplies\x18\x02 \x03(\x0b\x32,.stip.AlbumBroadcastReply.CreateRepliesEntry\x12\x41\n\x0c\x63loseReplies\x18\x03 \x03(\x0b\x32+.stip.AlbumBroadcastReply.CloseRepliesEntry\x12?\n\x0bopenReplies\x18\x04 \x03(\x0b\x32*.stip.AlbumBroadcastReply.OpenRepliesEntry\x1aL\n\x12\x43reateRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.stip.AlbumCreateReply:\x02\x38\x01\x1aJ\n\x11\x43loseRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.stip.AlbumCloseReply:\x02\x38\x01\x1aH\n\x10OpenRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.AlbumOpenReply:\x02\x38\x01\"\x1f\n\x11\x41lbumCloseRequest\x12\n\n\x02id\x18\x01 \x02(\t\"\x11\n\x0f\x41lbumCloseReply\"V\n\x12\x41lbumCreateRequest\x12\x14\n\x0c\x64htKeyLength\x18\x01 \x02(\x05\x12\x1e\n\x07geocode\x18\x02 \x02(\x0e\x32\r.stip.Geocode\x12\n\n\x02id\x18\x03 \x02(\t\"\x12\n\x10\x41lbumCreateReply\"\x12\n\x10\x41lbumListRequest\"-\n\x0e\x41lbumListReply\x12\x1b\n\x06\x61lbums\x18\x01 \x03(\x0b\x32\x0b.stip.Album\"C\n\x10\x41lbumOpenRequest\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\" \n\x0e\x41lbumOpenReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\xae\x01\n\x06\x46ilter\x12\x14\n\x0c\x65ndTimestamp\x18\x01 \x01(\x03\x12\x0f\n\x07geocode\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x01\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x01\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0f\n\x07recurse\x18\x06 \x02(\x08\x12\x0e\n\x06source\x18\x07 \x01(\t\x12\x16\n\x0estartTimestamp\x18\x08 \x01(\x03\"\xa2\x01\n\x15ImageBroadcastRequest\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.ImageBroadcastType\x12+\n\x0b\x66illRequest\x18\x02 \x01(\x0b\x32\x16.stip.ImageFillRequest\x12-\n\x0csplitRequest\x18\x03 \x01(\x0b\x32\x17.stip.ImageSplitRequest\"\xde\x02\n\x13ImageBroadcastReply\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.ImageBroadcastType\x12?\n\x0b\x66illReplies\x18\x02 \x03(\x0b\x32*.stip.ImageBroadcastReply.FillRepliesEntry\x12\x41\n\x0csplitReplies\x18\x03 \x03(\x0b\x32+.stip.ImageBroadcastReply.SplitRepliesEntry\x1aH\n\x10\x46illRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.ImageFillReply:\x02\x38\x01\x1aJ\n\x11SplitRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.stip.ImageSplitReply:\x02\x38\x01\"l\n\x10ImageFillRequest\x12\x1c\n\x06\x66ilter\x18\x01 \x02(\x0b\x32\x0c.stip.Filter\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\x12\x15\n\rwindowSeconds\x18\x04 \x02(\x03\" \n\x0eImageFillReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\x7f\n\x05Image\x12\x15\n\rcloudCoverage\x18\x01 \x01(\x01\x12\x0f\n\x07geocode\x18\x02 \x02(\t\x12\x19\n\x05\x66iles\x18\x03 \x03(\x0b\x32\n.stip.File\x12\x10\n\x08platform\x18\x04 \x02(\t\x12\x0e\n\x06source\x18\x05 \x02(\t\x12\x11\n\ttimestamp\x18\x06 \x02(\x03\"?\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x02(\t\x12\x15\n\rpixelCoverage\x18\x02 \x02(\x01\x12\x12\n\nsubdataset\x18\x03 \x02(\x05\"?\n\x10ImageListRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\"\x8b\x01\n\x11ImageStoreRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12!\n\x06\x66ormat\x18\x02 \x02(\x0e\x32\x11.stip.ImageFormat\x12\x0c\n\x04glob\x18\x03 \x02(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\"\"\n\x0fImageStoreReply\x12\x0f\n\x07task_id\x18\x01 \x02(\x04\"]\n\x06\x45xtent\x12\r\n\x05\x63ount\x18\x01 \x02(\r\x12\x0f\n\x07geocode\x18\x02 \x02(\t\x12\x10\n\x08platform\x18\x03 \x02(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06source\x18\x05 \x02(\t\"A\n\x12ImageSearchRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\"\x8e\x01\n\x11ImageSplitRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\x12\x14\n\x0cgeocodeBound\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\"!\n\x0fImageSplitReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"5\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\r\x12\x0f\n\x07rpcAddr\x18\x02 \x02(\t\x12\x10\n\x08xferAddr\x18\x03 \x02(\t\"\x11\n\x0fNodeListRequest\"*\n\rNodeListReply\x12\x19\n\x05nodes\x18\x01 \x03(\x0b\x32\n.stip.Node\"p\n\x14TaskBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12*\n\x0blistRequest\x18\x02 \x01(\x0b\x32\x15.stip.TaskListRequest\"\xcb\x01\n\x12TaskBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12>\n\x0blistReplies\x18\x02 \x03(\x0b\x32).stip.TaskBroadcastReply.ListRepliesEntry\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.TaskListReply:\x02\x38\x01\"v\n\x04Task\x12\n\n\x02id\x18\x01 \x02(\x04\x12\x16\n\x0eitemsCompleted\x18\x02 \x02(\r\x12\x14\n\x0citemsSkipped\x18\x03 \x02(\r\x12\x12\n\nitemsTotal\x18\x04 \x02(\r\x12 \n\x06status\x18\x05 \x02(\x0e\x32\x10.stip.TaskStatus\"\x11\n\x0fTaskListRequest\"*\n\rTaskListReply\x12\x19\n\x05tasks\x18\x01 \x03(\x0b\x32\n.stip.Task*#\n\x0b\x41lbumStatus\x12\n\n\x06\x43LOSED\x10\x00\x12\x08\n\x04OPEN\x10\x01*$\n\x07Geocode\x12\x0b\n\x07GEOHASH\x10\x00\x12\x0c\n\x08QUADTILE\x10\x01*G\n\x12\x41lbumBroadcastType\x12\x10\n\x0c\x41LBUM_CREATE\x10\x00\x12\x0f\n\x0b\x41LBUM_CLOSE\x10\x01\x12\x0e\n\nALBUM_OPEN\x10\x02*)\n\x12ImageBroadcastType\x12\x08\n\x04\x46ILL\x10\x00\x12\t\n\x05SPLIT\x10\x01*0\n\x0bImageFormat\x12\t\n\x05MODIS\x10\x00\x12\x08\n\x04NAIP\x10\x01\x12\x0c\n\x08SENTINEL\x10\x02*\"\n\x11TaskBroadcastType\x12\r\n\tTASK_LIST\x10\x00*4\n\nTaskStatus\x12\x0c\n\x08\x43OMPLETE\x10\x00\x12\x0b\n\x07\x46\x41ILURE\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x32\xb7\x02\n\x0f\x41lbumManagement\x12\x43\n\tBroadcast\x12\x1b.stip.AlbumBroadcastRequest\x1a\x19.stip.AlbumBroadcastReply\x12\x37\n\x05\x43lose\x12\x17.stip.AlbumCloseRequest\x1a\x15.stip.AlbumCloseReply\x12:\n\x06\x43reate\x12\x18.stip.AlbumCreateRequest\x1a\x16.stip.AlbumCreateReply\x12\x34\n\x04List\x12\x16.stip.AlbumListRequest\x1a\x14.stip.AlbumListReply\x12\x34\n\x04Open\x12\x16.stip.AlbumOpenRequest\x1a\x14.stip.AlbumOpenReply2\xe1\x02\n\x0fImageManagement\x12\x43\n\tBroadcast\x12\x1b.stip.ImageBroadcastRequest\x1a\x19.stip.ImageBroadcastReply\x12\x34\n\x04\x46ill\x12\x16.stip.ImageFillRequest\x1a\x14.stip.ImageFillReply\x12-\n\x04List\x12\x16.stip.ImageListRequest\x1a\x0b.stip.Image0\x01\x12\x37\n\x05Store\x12\x17.stip.ImageStoreRequest\x1a\x15.stip.ImageStoreReply\x12\x32\n\x06Search\x12\x18.stip.ImageSearchRequest\x1a\x0c.stip.Extent0\x01\x12\x37\n\x05Split\x12\x17.stip.ImageSplitRequest\x1a\x15.stip.ImageSplitReply2D\n\x0eNodeManagement\x12\x32\n\x04List\x12\x15.stip.NodeListRequest\x1a\x13.stip.NodeListReply2\x87\x01\n\x0eTaskManagement\x12\x41\n\tBroadcast\x12\x1a.stip.TaskBroadcastRequest\x1a\x18.stip.TaskBroadcastReply\x12\x32\n\x04List\x12\x15.stip.TaskListRequest\x1a\x13.stip.TaskListReply'
+  serialized_pb=b'\n\nstip.proto\x12\x04stip\"l\n\x05\x41lbum\x12\x14\n\x0c\x64htKeyLength\x18\x01 \x02(\x05\x12\x1e\n\x07geocode\x18\x02 \x02(\x0e\x32\r.stip.Geocode\x12\n\n\x02id\x18\x03 \x02(\t\x12!\n\x06status\x18\x04 \x02(\x0e\x32\x11.stip.AlbumStatus\"\xd3\x01\n\x15\x41lbumBroadcastRequest\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.AlbumBroadcastType\x12/\n\rcreateRequest\x18\x02 \x01(\x0b\x32\x18.stip.AlbumCreateRequest\x12-\n\x0c\x63loseRequest\x18\x03 \x01(\x0b\x32\x17.stip.AlbumCloseRequest\x12+\n\x0bopenRequest\x18\x04 \x01(\x0b\x32\x16.stip.AlbumOpenRequest\"\xf1\x03\n\x13\x41lbumBroadcastReply\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.AlbumBroadcastType\x12\x43\n\rcreateReplies\x18\x02 \x03(\x0b\x32,.stip.AlbumBroadcastReply.CreateRepliesEntry\x12\x41\n\x0c\x63loseReplies\x18\x03 \x03(\x0b\x32+.stip.AlbumBroadcastReply.CloseRepliesEntry\x12?\n\x0bopenReplies\x18\x04 \x03(\x0b\x32*.stip.AlbumBroadcastReply.OpenRepliesEntry\x1aL\n\x12\x43reateRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.stip.AlbumCreateReply:\x02\x38\x01\x1aJ\n\x11\x43loseRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.stip.AlbumCloseReply:\x02\x38\x01\x1aH\n\x10OpenRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.AlbumOpenReply:\x02\x38\x01\"\x1f\n\x11\x41lbumCloseRequest\x12\n\n\x02id\x18\x01 \x02(\t\"\x11\n\x0f\x41lbumCloseReply\"V\n\x12\x41lbumCreateRequest\x12\x14\n\x0c\x64htKeyLength\x18\x01 \x02(\x05\x12\x1e\n\x07geocode\x18\x02 \x02(\x0e\x32\r.stip.Geocode\x12\n\n\x02id\x18\x03 \x02(\t\"\x12\n\x10\x41lbumCreateReply\"\x12\n\x10\x41lbumListRequest\"-\n\x0e\x41lbumListReply\x12\x1b\n\x06\x61lbums\x18\x01 \x03(\x0b\x32\x0b.stip.Album\"C\n\x10\x41lbumOpenRequest\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06taskId\x18\x02 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x03 \x02(\r\" \n\x0e\x41lbumOpenReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\xae\x01\n\x06\x46ilter\x12\x14\n\x0c\x65ndTimestamp\x18\x01 \x01(\x03\x12\x0f\n\x07geocode\x18\x02 \x01(\t\x12\x18\n\x10maxCloudCoverage\x18\x03 \x01(\x01\x12\x18\n\x10minPixelCoverage\x18\x04 \x01(\x01\x12\x10\n\x08platform\x18\x05 \x01(\t\x12\x0f\n\x07recurse\x18\x06 \x02(\x08\x12\x0e\n\x06source\x18\x07 \x01(\t\x12\x16\n\x0estartTimestamp\x18\x08 \x01(\x03\"\xd7\x01\n\x15ImageBroadcastRequest\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.ImageBroadcastType\x12\x33\n\x0f\x63oalesceRequest\x18\x02 \x01(\x0b\x32\x1a.stip.ImageCoalesceRequest\x12+\n\x0b\x66illRequest\x18\x03 \x01(\x0b\x32\x16.stip.ImageFillRequest\x12-\n\x0csplitRequest\x18\x04 \x01(\x0b\x32\x17.stip.ImageSplitRequest\"\xf9\x03\n\x13ImageBroadcastReply\x12-\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x18.stip.ImageBroadcastType\x12G\n\x0f\x63oalesceReplies\x18\x02 \x03(\x0b\x32..stip.ImageBroadcastReply.CoalesceRepliesEntry\x12?\n\x0b\x66illReplies\x18\x03 \x03(\x0b\x32*.stip.ImageBroadcastReply.FillRepliesEntry\x12\x41\n\x0csplitReplies\x18\x04 \x03(\x0b\x32+.stip.ImageBroadcastReply.SplitRepliesEntry\x1aP\n\x14\x43oalesceRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.stip.ImageCoalesceReply:\x02\x38\x01\x1aH\n\x10\x46illRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.ImageFillReply:\x02\x38\x01\x1aJ\n\x11SplitRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.stip.ImageSplitReply:\x02\x38\x01\"\x91\x01\n\x14ImageCoalesceRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\x12\x10\n\x08platform\x18\x03 \x02(\t\x12\x0e\n\x06taskId\x18\x04 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x05 \x02(\r\x12\x15\n\rwindowSeconds\x18\x06 \x02(\x03\"$\n\x12ImageCoalesceReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"{\n\x10ImageFillRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\x12\x0e\n\x06taskId\x18\x03 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x04 \x02(\r\x12\x15\n\rwindowSeconds\x18\x05 \x02(\x03\" \n\x0eImageFillReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"\x7f\n\x05Image\x12\x15\n\rcloudCoverage\x18\x01 \x01(\x01\x12\x0f\n\x07geocode\x18\x02 \x02(\t\x12\x19\n\x05\x66iles\x18\x03 \x03(\x0b\x32\n.stip.File\x12\x10\n\x08platform\x18\x04 \x02(\t\x12\x0e\n\x06source\x18\x05 \x02(\t\x12\x11\n\ttimestamp\x18\x06 \x02(\x03\"?\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x02(\t\x12\x15\n\rpixelCoverage\x18\x02 \x02(\x01\x12\x12\n\nsubdataset\x18\x03 \x02(\x05\"?\n\x10ImageListRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\"\x8b\x01\n\x11ImageStoreRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12!\n\x06\x66ormat\x18\x02 \x02(\x0e\x32\x11.stip.ImageFormat\x12\x0c\n\x04glob\x18\x03 \x02(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\"\"\n\x0fImageStoreReply\x12\x0f\n\x07task_id\x18\x01 \x02(\x04\"]\n\x06\x45xtent\x12\r\n\x05\x63ount\x18\x01 \x02(\r\x12\x0f\n\x07geocode\x18\x02 \x02(\t\x12\x10\n\x08platform\x18\x03 \x02(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06source\x18\x05 \x02(\t\"A\n\x12ImageSearchRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\"\x8e\x01\n\x11ImageSplitRequest\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x1c\n\x06\x66ilter\x18\x02 \x02(\x0b\x32\x0c.stip.Filter\x12\x14\n\x0cgeocodeBound\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x02(\r\x12\x0e\n\x06taskId\x18\x05 \x01(\x04\x12\x13\n\x0bthreadCount\x18\x06 \x02(\r\"!\n\x0fImageSplitReply\x12\x0e\n\x06taskId\x18\x01 \x02(\x04\"5\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\r\x12\x0f\n\x07rpcAddr\x18\x02 \x02(\t\x12\x10\n\x08xferAddr\x18\x03 \x02(\t\"\x11\n\x0fNodeListRequest\"*\n\rNodeListReply\x12\x19\n\x05nodes\x18\x01 \x03(\x0b\x32\n.stip.Node\"\x9e\x01\n\x14TaskBroadcastRequest\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12,\n\x0c\x63learRequest\x18\x02 \x01(\x0b\x32\x16.stip.TaskClearRequest\x12*\n\x0blistRequest\x18\x03 \x01(\x0b\x32\x15.stip.TaskListRequest\"\xd8\x02\n\x12TaskBroadcastReply\x12,\n\x0bmessageType\x18\x01 \x02(\x0e\x32\x17.stip.TaskBroadcastType\x12@\n\x0c\x63learReplies\x18\x02 \x03(\x0b\x32*.stip.TaskBroadcastReply.ClearRepliesEntry\x12>\n\x0blistReplies\x18\x03 \x03(\x0b\x32).stip.TaskBroadcastReply.ListRepliesEntry\x1aI\n\x11\x43learRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.stip.TaskClearReply:\x02\x38\x01\x1aG\n\x10ListRepliesEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.stip.TaskListReply:\x02\x38\x01\"e\n\x04Task\x12\x16\n\x0e\x63ompletedCount\x18\x01 \x02(\r\x12\n\n\x02id\x18\x02 \x02(\x04\x12\x0f\n\x07running\x18\x03 \x02(\x08\x12\x14\n\x0cskippedCount\x18\x04 \x02(\r\x12\x12\n\ntotalCount\x18\x05 \x02(\r\"\x12\n\x10TaskClearRequest\"\x10\n\x0eTaskClearReply\"\x11\n\x0fTaskListRequest\"*\n\rTaskListReply\x12\x19\n\x05tasks\x18\x01 \x03(\x0b\x32\n.stip.Task*#\n\x0b\x41lbumStatus\x12\n\n\x06\x43LOSED\x10\x00\x12\x08\n\x04OPEN\x10\x01*$\n\x07Geocode\x12\x0b\n\x07GEOHASH\x10\x00\x12\x0c\n\x08QUADTILE\x10\x01*G\n\x12\x41lbumBroadcastType\x12\x10\n\x0c\x41LBUM_CREATE\x10\x00\x12\x0f\n\x0b\x41LBUM_CLOSE\x10\x01\x12\x0e\n\nALBUM_OPEN\x10\x02*7\n\x12ImageBroadcastType\x12\x0c\n\x08\x43OALESCE\x10\x00\x12\x08\n\x04\x46ILL\x10\x01\x12\t\n\x05SPLIT\x10\x02*0\n\x0bImageFormat\x12\t\n\x05MODIS\x10\x00\x12\x08\n\x04NAIP\x10\x01\x12\x0c\n\x08SENTINEL\x10\x02*2\n\x11TaskBroadcastType\x12\x0e\n\nTASK_CLEAR\x10\x00\x12\r\n\tTASK_LIST\x10\x01\x32\xb7\x02\n\x0f\x41lbumManagement\x12\x43\n\tBroadcast\x12\x1b.stip.AlbumBroadcastRequest\x1a\x19.stip.AlbumBroadcastReply\x12\x37\n\x05\x43lose\x12\x17.stip.AlbumCloseRequest\x1a\x15.stip.AlbumCloseReply\x12:\n\x06\x43reate\x12\x18.stip.AlbumCreateRequest\x1a\x16.stip.AlbumCreateReply\x12\x34\n\x04List\x12\x16.stip.AlbumListRequest\x1a\x14.stip.AlbumListReply\x12\x34\n\x04Open\x12\x16.stip.AlbumOpenRequest\x1a\x14.stip.AlbumOpenReply2\xa3\x03\n\x0fImageManagement\x12\x43\n\tBroadcast\x12\x1b.stip.ImageBroadcastRequest\x1a\x19.stip.ImageBroadcastReply\x12@\n\x08\x43oalesce\x12\x1a.stip.ImageCoalesceRequest\x1a\x18.stip.ImageCoalesceReply\x12\x34\n\x04\x46ill\x12\x16.stip.ImageFillRequest\x1a\x14.stip.ImageFillReply\x12-\n\x04List\x12\x16.stip.ImageListRequest\x1a\x0b.stip.Image0\x01\x12\x37\n\x05Store\x12\x17.stip.ImageStoreRequest\x1a\x15.stip.ImageStoreReply\x12\x32\n\x06Search\x12\x18.stip.ImageSearchRequest\x1a\x0c.stip.Extent0\x01\x12\x37\n\x05Split\x12\x17.stip.ImageSplitRequest\x1a\x15.stip.ImageSplitReply2D\n\x0eNodeManagement\x12\x32\n\x04List\x12\x15.stip.NodeListRequest\x1a\x13.stip.NodeListReply2\xbe\x01\n\x0eTaskManagement\x12\x41\n\tBroadcast\x12\x1a.stip.TaskBroadcastRequest\x1a\x18.stip.TaskBroadcastReply\x12\x35\n\x05\x43lear\x12\x16.stip.TaskClearRequest\x1a\x14.stip.TaskClearReply\x12\x32\n\x04List\x12\x15.stip.TaskListRequest\x1a\x13.stip.TaskListReply'
 )
 
 _ALBUMSTATUS = _descriptor.EnumDescriptor(
@@ -39,8 +39,8 @@ _ALBUMSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3413,
-  serialized_end=3448,
+  serialized_start=4031,
+  serialized_end=4066,
 )
 _sym_db.RegisterEnumDescriptor(_ALBUMSTATUS)
 
@@ -62,8 +62,8 @@ _GEOCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3450,
-  serialized_end=3486,
+  serialized_start=4068,
+  serialized_end=4104,
 )
 _sym_db.RegisterEnumDescriptor(_GEOCODE)
 
@@ -89,8 +89,8 @@ _ALBUMBROADCASTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3488,
-  serialized_end=3559,
+  serialized_start=4106,
+  serialized_end=4177,
 )
 _sym_db.RegisterEnumDescriptor(_ALBUMBROADCASTTYPE)
 
@@ -102,18 +102,22 @@ _IMAGEBROADCASTTYPE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='FILL', index=0, number=0,
+      name='COALESCE', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='SPLIT', index=1, number=1,
+      name='FILL', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SPLIT', index=2, number=2,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3561,
-  serialized_end=3602,
+  serialized_start=4179,
+  serialized_end=4234,
 )
 _sym_db.RegisterEnumDescriptor(_IMAGEBROADCASTTYPE)
 
@@ -139,8 +143,8 @@ _IMAGEFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3604,
-  serialized_end=3652,
+  serialized_start=4236,
+  serialized_end=4284,
 )
 _sym_db.RegisterEnumDescriptor(_IMAGEFORMAT)
 
@@ -152,45 +156,22 @@ _TASKBROADCASTTYPE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='TASK_LIST', index=0, number=0,
+      name='TASK_CLEAR', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TASK_LIST', index=1, number=1,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3654,
-  serialized_end=3688,
+  serialized_start=4286,
+  serialized_end=4336,
 )
 _sym_db.RegisterEnumDescriptor(_TASKBROADCASTTYPE)
 
 TaskBroadcastType = enum_type_wrapper.EnumTypeWrapper(_TASKBROADCASTTYPE)
-_TASKSTATUS = _descriptor.EnumDescriptor(
-  name='TaskStatus',
-  full_name='stip.TaskStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='COMPLETE', index=0, number=0,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='FAILURE', index=1, number=1,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RUNNING', index=2, number=2,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=3690,
-  serialized_end=3742,
-)
-_sym_db.RegisterEnumDescriptor(_TASKSTATUS)
-
-TaskStatus = enum_type_wrapper.EnumTypeWrapper(_TASKSTATUS)
 CLOSED = 0
 OPEN = 1
 GEOHASH = 0
@@ -198,15 +179,14 @@ QUADTILE = 1
 ALBUM_CREATE = 0
 ALBUM_CLOSE = 1
 ALBUM_OPEN = 2
-FILL = 0
-SPLIT = 1
+COALESCE = 0
+FILL = 1
+SPLIT = 2
 MODIS = 0
 NAIP = 1
 SENTINEL = 2
-TASK_LIST = 0
-COMPLETE = 0
-FAILURE = 1
-RUNNING = 2
+TASK_CLEAR = 0
+TASK_LIST = 1
 
 
 
@@ -827,15 +807,22 @@ _IMAGEBROADCASTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fillRequest', full_name='stip.ImageBroadcastRequest.fillRequest', index=1,
+      name='coalesceRequest', full_name='stip.ImageBroadcastRequest.coalesceRequest', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='splitRequest', full_name='stip.ImageBroadcastRequest.splitRequest', index=2,
+      name='fillRequest', full_name='stip.ImageBroadcastRequest.fillRequest', index=2,
       number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='splitRequest', full_name='stip.ImageBroadcastRequest.splitRequest', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -853,9 +840,46 @@ _IMAGEBROADCASTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1352,
-  serialized_end=1514,
+  serialized_end=1567,
 )
 
+
+_IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY = _descriptor.Descriptor(
+  name='CoalesceRepliesEntry',
+  full_name='stip.ImageBroadcastReply.CoalesceRepliesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stip.ImageBroadcastReply.CoalesceRepliesEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stip.ImageBroadcastReply.CoalesceRepliesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1845,
+  serialized_end=1925,
+)
 
 _IMAGEBROADCASTREPLY_FILLREPLIESENTRY = _descriptor.Descriptor(
   name='FillRepliesEntry',
@@ -890,8 +914,8 @@ _IMAGEBROADCASTREPLY_FILLREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1719,
-  serialized_end=1791,
+  serialized_start=1927,
+  serialized_end=1999,
 )
 
 _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY = _descriptor.Descriptor(
@@ -927,8 +951,8 @@ _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1793,
-  serialized_end=1867,
+  serialized_start=2001,
+  serialized_end=2075,
 )
 
 _IMAGEBROADCASTREPLY = _descriptor.Descriptor(
@@ -946,15 +970,22 @@ _IMAGEBROADCASTREPLY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fillReplies', full_name='stip.ImageBroadcastReply.fillReplies', index=1,
+      name='coalesceReplies', full_name='stip.ImageBroadcastReply.coalesceReplies', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='splitReplies', full_name='stip.ImageBroadcastReply.splitReplies', index=2,
+      name='fillReplies', full_name='stip.ImageBroadcastReply.fillReplies', index=2,
       number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='splitReplies', full_name='stip.ImageBroadcastReply.splitReplies', index=3,
+      number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -962,7 +993,7 @@ _IMAGEBROADCASTREPLY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_IMAGEBROADCASTREPLY_FILLREPLIESENTRY, _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY, ],
+  nested_types=[_IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY, _IMAGEBROADCASTREPLY_FILLREPLIESENTRY, _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -971,42 +1002,56 @@ _IMAGEBROADCASTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1517,
-  serialized_end=1867,
+  serialized_start=1570,
+  serialized_end=2075,
 )
 
 
-_IMAGEFILLREQUEST = _descriptor.Descriptor(
-  name='ImageFillRequest',
-  full_name='stip.ImageFillRequest',
+_IMAGECOALESCEREQUEST = _descriptor.Descriptor(
+  name='ImageCoalesceRequest',
+  full_name='stip.ImageCoalesceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filter', full_name='stip.ImageFillRequest.filter', index=0,
-      number=1, type=11, cpp_type=10, label=2,
+      name='album', full_name='stip.ImageCoalesceRequest.album', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='stip.ImageCoalesceRequest.filter', index=1,
+      number=2, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='taskId', full_name='stip.ImageFillRequest.taskId', index=1,
-      number=2, type=4, cpp_type=4, label=1,
+      name='platform', full_name='stip.ImageCoalesceRequest.platform', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='taskId', full_name='stip.ImageCoalesceRequest.taskId', index=3,
+      number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threadCount', full_name='stip.ImageFillRequest.threadCount', index=2,
-      number=3, type=13, cpp_type=3, label=2,
+      name='threadCount', full_name='stip.ImageCoalesceRequest.threadCount', index=4,
+      number=5, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='windowSeconds', full_name='stip.ImageFillRequest.windowSeconds', index=3,
-      number=4, type=3, cpp_type=2, label=2,
+      name='windowSeconds', full_name='stip.ImageCoalesceRequest.windowSeconds', index=5,
+      number=6, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1023,8 +1068,98 @@ _IMAGEFILLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1869,
-  serialized_end=1977,
+  serialized_start=2078,
+  serialized_end=2223,
+)
+
+
+_IMAGECOALESCEREPLY = _descriptor.Descriptor(
+  name='ImageCoalesceReply',
+  full_name='stip.ImageCoalesceReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='taskId', full_name='stip.ImageCoalesceReply.taskId', index=0,
+      number=1, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2225,
+  serialized_end=2261,
+)
+
+
+_IMAGEFILLREQUEST = _descriptor.Descriptor(
+  name='ImageFillRequest',
+  full_name='stip.ImageFillRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='album', full_name='stip.ImageFillRequest.album', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='stip.ImageFillRequest.filter', index=1,
+      number=2, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='taskId', full_name='stip.ImageFillRequest.taskId', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='threadCount', full_name='stip.ImageFillRequest.threadCount', index=3,
+      number=4, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='windowSeconds', full_name='stip.ImageFillRequest.windowSeconds', index=4,
+      number=5, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2263,
+  serialized_end=2386,
 )
 
 
@@ -1054,8 +1189,8 @@ _IMAGEFILLREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1979,
-  serialized_end=2011,
+  serialized_start=2388,
+  serialized_end=2420,
 )
 
 
@@ -1120,8 +1255,8 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2013,
-  serialized_end=2140,
+  serialized_start=2422,
+  serialized_end=2549,
 )
 
 
@@ -1165,8 +1300,8 @@ _FILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2142,
-  serialized_end=2205,
+  serialized_start=2551,
+  serialized_end=2614,
 )
 
 
@@ -1203,8 +1338,8 @@ _IMAGELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2207,
-  serialized_end=2270,
+  serialized_start=2616,
+  serialized_end=2679,
 )
 
 
@@ -1269,8 +1404,8 @@ _IMAGESTOREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2273,
-  serialized_end=2412,
+  serialized_start=2682,
+  serialized_end=2821,
 )
 
 
@@ -1300,8 +1435,8 @@ _IMAGESTOREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2414,
-  serialized_end=2448,
+  serialized_start=2823,
+  serialized_end=2857,
 )
 
 
@@ -1359,8 +1494,8 @@ _EXTENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2450,
-  serialized_end=2543,
+  serialized_start=2859,
+  serialized_end=2952,
 )
 
 
@@ -1397,8 +1532,8 @@ _IMAGESEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2545,
-  serialized_end=2610,
+  serialized_start=2954,
+  serialized_end=3019,
 )
 
 
@@ -1463,8 +1598,8 @@ _IMAGESPLITREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2613,
-  serialized_end=2755,
+  serialized_start=3022,
+  serialized_end=3164,
 )
 
 
@@ -1494,8 +1629,8 @@ _IMAGESPLITREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2757,
-  serialized_end=2790,
+  serialized_start=3166,
+  serialized_end=3199,
 )
 
 
@@ -1539,8 +1674,8 @@ _NODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2792,
-  serialized_end=2845,
+  serialized_start=3201,
+  serialized_end=3254,
 )
 
 
@@ -1563,8 +1698,8 @@ _NODELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2847,
-  serialized_end=2864,
+  serialized_start=3256,
+  serialized_end=3273,
 )
 
 
@@ -1594,8 +1729,8 @@ _NODELISTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2866,
-  serialized_end=2908,
+  serialized_start=3275,
+  serialized_end=3317,
 )
 
 
@@ -1614,8 +1749,15 @@ _TASKBROADCASTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='listRequest', full_name='stip.TaskBroadcastRequest.listRequest', index=1,
+      name='clearRequest', full_name='stip.TaskBroadcastRequest.clearRequest', index=1,
       number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='listRequest', full_name='stip.TaskBroadcastRequest.listRequest', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1632,10 +1774,47 @@ _TASKBROADCASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2910,
-  serialized_end=3022,
+  serialized_start=3320,
+  serialized_end=3478,
 )
 
+
+_TASKBROADCASTREPLY_CLEARREPLIESENTRY = _descriptor.Descriptor(
+  name='ClearRepliesEntry',
+  full_name='stip.TaskBroadcastReply.ClearRepliesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stip.TaskBroadcastReply.ClearRepliesEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stip.TaskBroadcastReply.ClearRepliesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3679,
+  serialized_end=3752,
+)
 
 _TASKBROADCASTREPLY_LISTREPLIESENTRY = _descriptor.Descriptor(
   name='ListRepliesEntry',
@@ -1670,8 +1849,8 @@ _TASKBROADCASTREPLY_LISTREPLIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3157,
-  serialized_end=3228,
+  serialized_start=3754,
+  serialized_end=3825,
 )
 
 _TASKBROADCASTREPLY = _descriptor.Descriptor(
@@ -1689,8 +1868,15 @@ _TASKBROADCASTREPLY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='listReplies', full_name='stip.TaskBroadcastReply.listReplies', index=1,
+      name='clearReplies', full_name='stip.TaskBroadcastReply.clearReplies', index=1,
       number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='listReplies', full_name='stip.TaskBroadcastReply.listReplies', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1698,7 +1884,7 @@ _TASKBROADCASTREPLY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_TASKBROADCASTREPLY_LISTREPLIESENTRY, ],
+  nested_types=[_TASKBROADCASTREPLY_CLEARREPLIESENTRY, _TASKBROADCASTREPLY_LISTREPLIESENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -1707,8 +1893,8 @@ _TASKBROADCASTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3025,
-  serialized_end=3228,
+  serialized_start=3481,
+  serialized_end=3825,
 )
 
 
@@ -1720,36 +1906,36 @@ _TASK = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='stip.Task.id', index=0,
-      number=1, type=4, cpp_type=4, label=2,
+      name='completedCount', full_name='stip.Task.completedCount', index=0,
+      number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='itemsCompleted', full_name='stip.Task.itemsCompleted', index=1,
-      number=2, type=13, cpp_type=3, label=2,
+      name='id', full_name='stip.Task.id', index=1,
+      number=2, type=4, cpp_type=4, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='itemsSkipped', full_name='stip.Task.itemsSkipped', index=2,
-      number=3, type=13, cpp_type=3, label=2,
-      has_default_value=False, default_value=0,
+      name='running', full_name='stip.Task.running', index=2,
+      number=3, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='itemsTotal', full_name='stip.Task.itemsTotal', index=3,
+      name='skippedCount', full_name='stip.Task.skippedCount', index=3,
       number=4, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='status', full_name='stip.Task.status', index=4,
-      number=5, type=14, cpp_type=8, label=2,
+      name='totalCount', full_name='stip.Task.totalCount', index=4,
+      number=5, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1766,8 +1952,56 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3230,
-  serialized_end=3348,
+  serialized_start=3827,
+  serialized_end=3928,
+)
+
+
+_TASKCLEARREQUEST = _descriptor.Descriptor(
+  name='TaskClearRequest',
+  full_name='stip.TaskClearRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3930,
+  serialized_end=3948,
+)
+
+
+_TASKCLEARREPLY = _descriptor.Descriptor(
+  name='TaskClearReply',
+  full_name='stip.TaskClearReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3950,
+  serialized_end=3966,
 )
 
 
@@ -1790,8 +2024,8 @@ _TASKLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3350,
-  serialized_end=3367,
+  serialized_start=3968,
+  serialized_end=3985,
 )
 
 
@@ -1821,8 +2055,8 @@ _TASKLISTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3369,
-  serialized_end=3411,
+  serialized_start=3987,
+  serialized_end=4029,
 )
 
 _ALBUM.fields_by_name['geocode'].enum_type = _GEOCODE
@@ -1844,15 +2078,20 @@ _ALBUMBROADCASTREPLY.fields_by_name['openReplies'].message_type = _ALBUMBROADCAS
 _ALBUMCREATEREQUEST.fields_by_name['geocode'].enum_type = _GEOCODE
 _ALBUMLISTREPLY.fields_by_name['albums'].message_type = _ALBUM
 _IMAGEBROADCASTREQUEST.fields_by_name['messageType'].enum_type = _IMAGEBROADCASTTYPE
+_IMAGEBROADCASTREQUEST.fields_by_name['coalesceRequest'].message_type = _IMAGECOALESCEREQUEST
 _IMAGEBROADCASTREQUEST.fields_by_name['fillRequest'].message_type = _IMAGEFILLREQUEST
 _IMAGEBROADCASTREQUEST.fields_by_name['splitRequest'].message_type = _IMAGESPLITREQUEST
+_IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY.fields_by_name['value'].message_type = _IMAGECOALESCEREPLY
+_IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY.containing_type = _IMAGEBROADCASTREPLY
 _IMAGEBROADCASTREPLY_FILLREPLIESENTRY.fields_by_name['value'].message_type = _IMAGEFILLREPLY
 _IMAGEBROADCASTREPLY_FILLREPLIESENTRY.containing_type = _IMAGEBROADCASTREPLY
 _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY.fields_by_name['value'].message_type = _IMAGESPLITREPLY
 _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY.containing_type = _IMAGEBROADCASTREPLY
 _IMAGEBROADCASTREPLY.fields_by_name['messageType'].enum_type = _IMAGEBROADCASTTYPE
+_IMAGEBROADCASTREPLY.fields_by_name['coalesceReplies'].message_type = _IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY
 _IMAGEBROADCASTREPLY.fields_by_name['fillReplies'].message_type = _IMAGEBROADCASTREPLY_FILLREPLIESENTRY
 _IMAGEBROADCASTREPLY.fields_by_name['splitReplies'].message_type = _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY
+_IMAGECOALESCEREQUEST.fields_by_name['filter'].message_type = _FILTER
 _IMAGEFILLREQUEST.fields_by_name['filter'].message_type = _FILTER
 _IMAGE.fields_by_name['files'].message_type = _FILE
 _IMAGELISTREQUEST.fields_by_name['filter'].message_type = _FILTER
@@ -1861,12 +2100,15 @@ _IMAGESEARCHREQUEST.fields_by_name['filter'].message_type = _FILTER
 _IMAGESPLITREQUEST.fields_by_name['filter'].message_type = _FILTER
 _NODELISTREPLY.fields_by_name['nodes'].message_type = _NODE
 _TASKBROADCASTREQUEST.fields_by_name['messageType'].enum_type = _TASKBROADCASTTYPE
+_TASKBROADCASTREQUEST.fields_by_name['clearRequest'].message_type = _TASKCLEARREQUEST
 _TASKBROADCASTREQUEST.fields_by_name['listRequest'].message_type = _TASKLISTREQUEST
+_TASKBROADCASTREPLY_CLEARREPLIESENTRY.fields_by_name['value'].message_type = _TASKCLEARREPLY
+_TASKBROADCASTREPLY_CLEARREPLIESENTRY.containing_type = _TASKBROADCASTREPLY
 _TASKBROADCASTREPLY_LISTREPLIESENTRY.fields_by_name['value'].message_type = _TASKLISTREPLY
 _TASKBROADCASTREPLY_LISTREPLIESENTRY.containing_type = _TASKBROADCASTREPLY
 _TASKBROADCASTREPLY.fields_by_name['messageType'].enum_type = _TASKBROADCASTTYPE
+_TASKBROADCASTREPLY.fields_by_name['clearReplies'].message_type = _TASKBROADCASTREPLY_CLEARREPLIESENTRY
 _TASKBROADCASTREPLY.fields_by_name['listReplies'].message_type = _TASKBROADCASTREPLY_LISTREPLIESENTRY
-_TASK.fields_by_name['status'].enum_type = _TASKSTATUS
 _TASKLISTREPLY.fields_by_name['tasks'].message_type = _TASK
 DESCRIPTOR.message_types_by_name['Album'] = _ALBUM
 DESCRIPTOR.message_types_by_name['AlbumBroadcastRequest'] = _ALBUMBROADCASTREQUEST
@@ -1882,6 +2124,8 @@ DESCRIPTOR.message_types_by_name['AlbumOpenReply'] = _ALBUMOPENREPLY
 DESCRIPTOR.message_types_by_name['Filter'] = _FILTER
 DESCRIPTOR.message_types_by_name['ImageBroadcastRequest'] = _IMAGEBROADCASTREQUEST
 DESCRIPTOR.message_types_by_name['ImageBroadcastReply'] = _IMAGEBROADCASTREPLY
+DESCRIPTOR.message_types_by_name['ImageCoalesceRequest'] = _IMAGECOALESCEREQUEST
+DESCRIPTOR.message_types_by_name['ImageCoalesceReply'] = _IMAGECOALESCEREPLY
 DESCRIPTOR.message_types_by_name['ImageFillRequest'] = _IMAGEFILLREQUEST
 DESCRIPTOR.message_types_by_name['ImageFillReply'] = _IMAGEFILLREPLY
 DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
@@ -1899,6 +2143,8 @@ DESCRIPTOR.message_types_by_name['NodeListReply'] = _NODELISTREPLY
 DESCRIPTOR.message_types_by_name['TaskBroadcastRequest'] = _TASKBROADCASTREQUEST
 DESCRIPTOR.message_types_by_name['TaskBroadcastReply'] = _TASKBROADCASTREPLY
 DESCRIPTOR.message_types_by_name['Task'] = _TASK
+DESCRIPTOR.message_types_by_name['TaskClearRequest'] = _TASKCLEARREQUEST
+DESCRIPTOR.message_types_by_name['TaskClearReply'] = _TASKCLEARREPLY
 DESCRIPTOR.message_types_by_name['TaskListRequest'] = _TASKLISTREQUEST
 DESCRIPTOR.message_types_by_name['TaskListReply'] = _TASKLISTREPLY
 DESCRIPTOR.enum_types_by_name['AlbumStatus'] = _ALBUMSTATUS
@@ -1907,7 +2153,6 @@ DESCRIPTOR.enum_types_by_name['AlbumBroadcastType'] = _ALBUMBROADCASTTYPE
 DESCRIPTOR.enum_types_by_name['ImageBroadcastType'] = _IMAGEBROADCASTTYPE
 DESCRIPTOR.enum_types_by_name['ImageFormat'] = _IMAGEFORMAT
 DESCRIPTOR.enum_types_by_name['TaskBroadcastType'] = _TASKBROADCASTTYPE
-DESCRIPTOR.enum_types_by_name['TaskStatus'] = _TASKSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Album = _reflection.GeneratedProtocolMessageType('Album', (_message.Message,), {
@@ -2027,6 +2272,13 @@ _sym_db.RegisterMessage(ImageBroadcastRequest)
 
 ImageBroadcastReply = _reflection.GeneratedProtocolMessageType('ImageBroadcastReply', (_message.Message,), {
 
+  'CoalesceRepliesEntry' : _reflection.GeneratedProtocolMessageType('CoalesceRepliesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY,
+    '__module__' : 'stip_pb2'
+    # @@protoc_insertion_point(class_scope:stip.ImageBroadcastReply.CoalesceRepliesEntry)
+    })
+  ,
+
   'FillRepliesEntry' : _reflection.GeneratedProtocolMessageType('FillRepliesEntry', (_message.Message,), {
     'DESCRIPTOR' : _IMAGEBROADCASTREPLY_FILLREPLIESENTRY,
     '__module__' : 'stip_pb2'
@@ -2045,8 +2297,23 @@ ImageBroadcastReply = _reflection.GeneratedProtocolMessageType('ImageBroadcastRe
   # @@protoc_insertion_point(class_scope:stip.ImageBroadcastReply)
   })
 _sym_db.RegisterMessage(ImageBroadcastReply)
+_sym_db.RegisterMessage(ImageBroadcastReply.CoalesceRepliesEntry)
 _sym_db.RegisterMessage(ImageBroadcastReply.FillRepliesEntry)
 _sym_db.RegisterMessage(ImageBroadcastReply.SplitRepliesEntry)
+
+ImageCoalesceRequest = _reflection.GeneratedProtocolMessageType('ImageCoalesceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _IMAGECOALESCEREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.ImageCoalesceRequest)
+  })
+_sym_db.RegisterMessage(ImageCoalesceRequest)
+
+ImageCoalesceReply = _reflection.GeneratedProtocolMessageType('ImageCoalesceReply', (_message.Message,), {
+  'DESCRIPTOR' : _IMAGECOALESCEREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.ImageCoalesceReply)
+  })
+_sym_db.RegisterMessage(ImageCoalesceReply)
 
 ImageFillRequest = _reflection.GeneratedProtocolMessageType('ImageFillRequest', (_message.Message,), {
   'DESCRIPTOR' : _IMAGEFILLREQUEST,
@@ -2155,6 +2422,13 @@ _sym_db.RegisterMessage(TaskBroadcastRequest)
 
 TaskBroadcastReply = _reflection.GeneratedProtocolMessageType('TaskBroadcastReply', (_message.Message,), {
 
+  'ClearRepliesEntry' : _reflection.GeneratedProtocolMessageType('ClearRepliesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TASKBROADCASTREPLY_CLEARREPLIESENTRY,
+    '__module__' : 'stip_pb2'
+    # @@protoc_insertion_point(class_scope:stip.TaskBroadcastReply.ClearRepliesEntry)
+    })
+  ,
+
   'ListRepliesEntry' : _reflection.GeneratedProtocolMessageType('ListRepliesEntry', (_message.Message,), {
     'DESCRIPTOR' : _TASKBROADCASTREPLY_LISTREPLIESENTRY,
     '__module__' : 'stip_pb2'
@@ -2166,6 +2440,7 @@ TaskBroadcastReply = _reflection.GeneratedProtocolMessageType('TaskBroadcastRepl
   # @@protoc_insertion_point(class_scope:stip.TaskBroadcastReply)
   })
 _sym_db.RegisterMessage(TaskBroadcastReply)
+_sym_db.RegisterMessage(TaskBroadcastReply.ClearRepliesEntry)
 _sym_db.RegisterMessage(TaskBroadcastReply.ListRepliesEntry)
 
 Task = _reflection.GeneratedProtocolMessageType('Task', (_message.Message,), {
@@ -2174,6 +2449,20 @@ Task = _reflection.GeneratedProtocolMessageType('Task', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:stip.Task)
   })
 _sym_db.RegisterMessage(Task)
+
+TaskClearRequest = _reflection.GeneratedProtocolMessageType('TaskClearRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TASKCLEARREQUEST,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.TaskClearRequest)
+  })
+_sym_db.RegisterMessage(TaskClearRequest)
+
+TaskClearReply = _reflection.GeneratedProtocolMessageType('TaskClearReply', (_message.Message,), {
+  'DESCRIPTOR' : _TASKCLEARREPLY,
+  '__module__' : 'stip_pb2'
+  # @@protoc_insertion_point(class_scope:stip.TaskClearReply)
+  })
+_sym_db.RegisterMessage(TaskClearReply)
 
 TaskListRequest = _reflection.GeneratedProtocolMessageType('TaskListRequest', (_message.Message,), {
   'DESCRIPTOR' : _TASKLISTREQUEST,
@@ -2193,8 +2482,10 @@ _sym_db.RegisterMessage(TaskListReply)
 _ALBUMBROADCASTREPLY_CREATEREPLIESENTRY._options = None
 _ALBUMBROADCASTREPLY_CLOSEREPLIESENTRY._options = None
 _ALBUMBROADCASTREPLY_OPENREPLIESENTRY._options = None
+_IMAGEBROADCASTREPLY_COALESCEREPLIESENTRY._options = None
 _IMAGEBROADCASTREPLY_FILLREPLIESENTRY._options = None
 _IMAGEBROADCASTREPLY_SPLITREPLIESENTRY._options = None
+_TASKBROADCASTREPLY_CLEARREPLIESENTRY._options = None
 _TASKBROADCASTREPLY_LISTREPLIESENTRY._options = None
 
 _ALBUMMANAGEMENT = _descriptor.ServiceDescriptor(
@@ -2203,8 +2494,8 @@ _ALBUMMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=3745,
-  serialized_end=4056,
+  serialized_start=4339,
+  serialized_end=4650,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',
@@ -2263,8 +2554,8 @@ _IMAGEMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=4059,
-  serialized_end=4412,
+  serialized_start=4653,
+  serialized_end=5072,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',
@@ -2276,9 +2567,18 @@ _IMAGEMANAGEMENT = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='Coalesce',
+    full_name='stip.ImageManagement.Coalesce',
+    index=1,
+    containing_service=None,
+    input_type=_IMAGECOALESCEREQUEST,
+    output_type=_IMAGECOALESCEREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='Fill',
     full_name='stip.ImageManagement.Fill',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_IMAGEFILLREQUEST,
     output_type=_IMAGEFILLREPLY,
@@ -2287,7 +2587,7 @@ _IMAGEMANAGEMENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='List',
     full_name='stip.ImageManagement.List',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_IMAGELISTREQUEST,
     output_type=_IMAGE,
@@ -2296,7 +2596,7 @@ _IMAGEMANAGEMENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Store',
     full_name='stip.ImageManagement.Store',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_IMAGESTOREREQUEST,
     output_type=_IMAGESTOREREPLY,
@@ -2305,7 +2605,7 @@ _IMAGEMANAGEMENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Search',
     full_name='stip.ImageManagement.Search',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_IMAGESEARCHREQUEST,
     output_type=_EXTENT,
@@ -2314,7 +2614,7 @@ _IMAGEMANAGEMENT = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Split',
     full_name='stip.ImageManagement.Split',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=_IMAGESPLITREQUEST,
     output_type=_IMAGESPLITREPLY,
@@ -2332,8 +2632,8 @@ _NODEMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=4414,
-  serialized_end=4482,
+  serialized_start=5074,
+  serialized_end=5142,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
@@ -2356,8 +2656,8 @@ _TASKMANAGEMENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=3,
   serialized_options=None,
-  serialized_start=4485,
-  serialized_end=4620,
+  serialized_start=5145,
+  serialized_end=5335,
   methods=[
   _descriptor.MethodDescriptor(
     name='Broadcast',
@@ -2369,9 +2669,18 @@ _TASKMANAGEMENT = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='Clear',
+    full_name='stip.TaskManagement.Clear',
+    index=1,
+    containing_service=None,
+    input_type=_TASKCLEARREQUEST,
+    output_type=_TASKCLEARREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='List',
     full_name='stip.TaskManagement.List',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_TASKLISTREQUEST,
     output_type=_TASKLISTREPLY,
