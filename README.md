@@ -19,7 +19,7 @@ The only python dependency required for this library is grpcio, a python gRPC im
 
 To use this library from another project, the path must be importing by the executing python code.
 #### EXAMPLES
-The test.py file at the root of the projects contains a few examples outlining base functionality. Most functionality is driven by performing stip requests (using both synchronous as streaming API's) and iteratring over results. Resulting objects are defined by Protobufs as follows
+The 'examples' folder in the root directory contains a variety of library usafe illustrations. Most functionality is driven by performing stip requests (using both synchronous as streaming API's) and iteratring over results. Thankfully, this process is abstracted through API functions. Resulting objects are defined by Protobufs as follows
 
     message Album {
         required int32 dhtKeyLength = 1;
