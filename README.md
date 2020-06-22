@@ -19,12 +19,26 @@ The only python dependency required for this library is grpcio, a python gRPC im
 
 To use this library from another project, the path must be importing by the executing python code.
 #### EXAMPLES
-The test.py file at the root of the projects contains a few examples outlining base functionality. Listing images within stip is facilitated by initializing instances of the ImageIterator class. This definition iterates over cluster nodes, leveraging the gRPC protobuf streaming API to return tuples of (node, image) where node and image are the Protobuf messages defined as
+The test.py file at the root of the projects contains a few examples outlining base functionality. Most functionality is driven by performing stip requests (using both synchronous as streaming API's) and iteratring over results. Resulting objects are defined by Protobufs as follows
 
-    message Node {
-        required uint32 id = 1;
-        required string rpcAddr = 2;
-        required string xferAddr = 3;
+    message Album {
+        required int32 dhtKeyLength = 1;
+        required Geocode geocode = 2;
+        required string id = 3;
+        required AlbumStatus status = 4;
+    }
+
+    enum AlbumStatus {
+        CLOSED = 0;
+        OPEN = 1;
+    }
+
+    message Extent {
+        required uint32 count = 1;
+        required string geocode = 2;
+        required string platform = 3;
+        required uint32 precision = 4;
+        required string source = 5;
     }
 
     message Image {
@@ -37,10 +51,16 @@ The test.py file at the root of the projects contains a few examples outlining b
     }
 
     message File {
-        required string description = 1;
-        required string path = 2;
-        required double pixelCoverage = 3;
+        required string path = 1;
+        required double pixelCoverage = 2;
+        required int32 subdataset = 3;
+    }
+
+    message Node {
+        required uint32 id = 1;
+        required string rpcAddr = 2;
+        required string xferAddr = 3;
     }
 
 ## TODO
-- include full protobuf RPC functinality: album list, image search, etc
+- temporarily fully functional

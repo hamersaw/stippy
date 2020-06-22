@@ -72,6 +72,65 @@ class StipIterator:
         return (self.nodes[self.node_index-1], item)
 
 '''
+ALBUM FUNCTIONS
+'''
+def close_album(host_addr, album):
+    # open AlbumManagementStub
+    channel = grpc.insecure_channel(host_addr)
+    stub = stip_pb2_grpc.AlbumManagementStub(channel)
+
+    # initialize request
+    close_request = stip_pb2.AlbumCloseRequest(id=album)
+    request = stip_pb2.AlbumBroadcastRequest(
+        messageType=stip_pb2.ALBUM_CLOSE, closeRequest=close_request)
+
+    # submit request
+    response = stub.Broadcast(request)
+
+    # close channel
+    channel.close()
+
+    # return nodes
+    return response.closeReplies
+
+def list_albums(host_addr):
+    # open AlbumManagementStub
+    channel = grpc.insecure_channel(host_addr)
+    stub = stip_pb2_grpc.AlbumManagementStub(channel)
+
+    # initialize request
+    request = stip_pb2.AlbumListRequest()
+
+    # submit request
+    response = stub.List(request)
+
+    # close channel
+    channel.close()
+
+    # return nodes
+    return response.albums
+
+def open_album(host_addr, album, thread_count=4):
+    # open AlbumManagementStub
+    channel = grpc.insecure_channel(host_addr)
+    stub = stip_pb2_grpc.AlbumManagementStub(channel)
+
+    # initialize request
+    open_request = stip_pb2.AlbumOpenRequest(id=album,
+        threadCount=thread_count)
+    request = stip_pb2.AlbumBroadcastRequest(
+        messageType=stip_pb2.ALBUM_OPEN, openRequest=open_request)
+
+    # submit request
+    response = stub.Broadcast(request)
+
+    # close channel
+    channel.close()
+
+    # return nodes
+    return response.openReplies
+
+'''
 EXTENT FUNCTIONS
 '''
 def list_node_extents(host_addr, album, end_timestamp=None, geocode=None,
@@ -195,7 +254,7 @@ def list_images(host_addr, album, end_timestamp=None, geocode=None,
 NODE FUNCTIONS
 '''
 def list_nodes(host_addr):
-    # open ClusterManagementStub
+    # open NodeManagementStub
     channel = grpc.insecure_channel(host_addr)
     stub = stip_pb2_grpc.NodeManagementStub(channel)
 

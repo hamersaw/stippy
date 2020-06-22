@@ -10,6 +10,18 @@ if __name__ == '__main__':
     for node in nodes:
         print(str(node.id) + ' ' + node.rpcAddr + ' ' + node.xferAddr)
 
+    # print albums
+    print('-----ALBUMS-----')
+    albums = stippy.list_albums(host_addr)
+    for album in albums:
+        print(album.id + ' ' + str(album.geocode) + ' ' + str(album.status))
+
+    # close test album
+    stippy.close_album(host_addr, 'test')
+
+    # open test album
+    stippy.open_album(host_addr, 'test')
+
     # print cluster extents starting with geohash '9q6'
     print('-----EXTENTS-----')
     extent_iter = stippy.list_extents(host_addr,
