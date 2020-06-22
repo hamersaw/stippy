@@ -90,7 +90,7 @@ def close_album(host_addr, album):
     # close channel
     channel.close()
 
-    # return nodes
+    # return replies
     return response.closeReplies
 
 def list_albums(host_addr):
@@ -107,7 +107,7 @@ def list_albums(host_addr):
     # close channel
     channel.close()
 
-    # return nodes
+    # return albums
     return response.albums
 
 def open_album(host_addr, album, thread_count=4):
@@ -127,7 +127,7 @@ def open_album(host_addr, album, thread_count=4):
     # close channel
     channel.close()
 
-    # return nodes
+    # return replies
     return response.openReplies
 
 '''
@@ -136,23 +136,6 @@ EXTENT FUNCTIONS
 def list_node_extents(host_addr, album, end_timestamp=None, geocode=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
-    # initialize request
-    filter = stip_pb2.Filter(
-            endTimestamp=end_timestamp,
-            geocode=geocode,
-            maxCloudCoverage=max_cloud_coverage,
-            minPixelCoverage=min_pixel_coverage,
-            platform=platform,
-            recurse=recurse,
-            source=source,
-            startTimestamp=start_timestamp,
-        )
-
-    request = stip_pb2.ImageSearchRequest(
-            album=album,
-            filter=filter,
-        )
-
     # discover node metadata
     host_node = None
     for node in list_nodes(host_addr):
@@ -162,13 +145,22 @@ def list_node_extents(host_addr, album, end_timestamp=None, geocode=None,
     if host_node == None:
         raise Exception('unable to identify node with rpc address ' + host_addr)
 
-    # return new StipIterator
-    iterator_builder = ExtentIteratorBuilder(request)
-    return StipIterator(iterator_builder, [host_node])
+    # return StipIterator
+    return _list_extents([host_node], album, end_timestamp,
+        geocode, max_cloud_coverage, min_pixel_coverage, platform,
+        recurse, source, start_timestamp)
 
 def list_extents(host_addr, album, end_timestamp=None, geocode=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
+    # return StipIterator
+    return _list_extents(list_nodes(host_addr), album, end_timestamp,
+        geocode, max_cloud_coverage, min_pixel_coverage, platform,
+        recurse, source, start_timestamp)
+
+def _list_extents(nodes, album, end_timestamp, geocode,
+        max_cloud_coverage, min_pixel_coverage, platform,
+        recurse, source, start_timestamp):
     # initialize request
     filter = stip_pb2.Filter(
             endTimestamp=end_timestamp,
@@ -188,7 +180,7 @@ def list_extents(host_addr, album, end_timestamp=None, geocode=None,
 
     # return new StipIterator
     iterator_builder = ExtentIteratorBuilder(request)
-    return StipIterator(iterator_builder, list_nodes(host_addr))
+    return StipIterator(iterator_builder, nodes)
 
 '''
 IMAGE FUNCTIONS
@@ -196,23 +188,6 @@ IMAGE FUNCTIONS
 def list_node_images(host_addr, album, end_timestamp=None, geocode=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
-    # initialize request
-    filter = stip_pb2.Filter(
-            endTimestamp=end_timestamp,
-            geocode=geocode,
-            maxCloudCoverage=max_cloud_coverage,
-            minPixelCoverage=min_pixel_coverage,
-            platform=platform,
-            recurse=recurse,
-            source=source,
-            startTimestamp=start_timestamp,
-        )
-
-    request = stip_pb2.ImageListRequest(
-            album=album,
-            filter=filter,
-        )
-
     # discover node metadata
     host_node = None
     for node in list_nodes(host_addr):
@@ -222,13 +197,22 @@ def list_node_images(host_addr, album, end_timestamp=None, geocode=None,
     if host_node == None:
         raise Exception('unable to identify node with rpc address ' + host_addr)
 
-    # return new ExtentIterator
-    iterator_builder = ImageIteratorBuilder(request)
-    return StipIterator(iterator_builder, [host_node])
+    # return StipIterator
+    return _list_images([host_node], album, end_timestamp,
+        geocode, max_cloud_coverage, min_pixel_coverage, platform,
+        recurse, source, start_timestamp)
 
 def list_images(host_addr, album, end_timestamp=None, geocode=None,
         max_cloud_coverage=None, min_pixel_coverage=None, platform=None,
         recurse=False, source=None, start_timestamp=None):
+    # return StipIterator
+    return _list_images(list_nodes(host_addr), album, end_timestamp,
+        geocode, max_cloud_coverage, min_pixel_coverage, platform,
+        recurse, source, start_timestamp)
+
+def _list_images(nodes, album, end_timestamp, geocode,
+        max_cloud_coverage, min_pixel_coverage, platform,
+        recurse, source, start_timestamp):
     # initialize request
     filter = stip_pb2.Filter(
             endTimestamp=end_timestamp,
@@ -246,9 +230,9 @@ def list_images(host_addr, album, end_timestamp=None, geocode=None,
             filter=filter,
         )
 
-    # return new ExtentIterator
+    # return new StipIterator
     iterator_builder = ImageIteratorBuilder(request)
-    return StipIterator(iterator_builder, list_nodes(host_addr))
+    return StipIterator(iterator_builder, nodes)
 
 '''
 NODE FUNCTIONS
