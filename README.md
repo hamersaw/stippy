@@ -2,7 +2,7 @@
 ## OVERVIEW
 [stip](https://github.com/hamersaw/stip) python API.
 
-## USAGE
+## INSTALLATION
 #### PROTOBUF GENERATION
 This project uses [gRPC](https://grpc.io/) and [Protocol Buffers](https://developers.google.com/protocol-buffers/) to present a language agnostic RPC interface. The stip_pb2.py and stip_pb2_grpc.py files at the root of this project are pre-compiled protobuf definition files for the latest release. Therefore, each user does not need to compile them separately. Below are the necessary commands to compile python protobuf files.
 
@@ -10,16 +10,20 @@ This project uses [gRPC](https://grpc.io/) and [Protocol Buffers](https://develo
     pip3 install grpcio-tools
 
     # compile python protobuf definitions from stip source files
-    python3 -m grpc_tools.protoc -I../stip/impl/protobuf/proto/ --python_out=. --grpc_python_out=. ../stip/impl/protobuf/proto/stip.proto
+    python3 -m grpc_tools.protoc -I../stip/impl/protobuf/proto/ --python_out=libs/ --grpc_python_out=libs/ ../stip/impl/protobuf/proto/stip.proto
+
+    # update stip_pb2_grpc stip_pb2 import to reflect libs directory
+    sed -i 's/import stip_pb2 as stip__pb2/import libs.stip_pb2 as stip__pb2/g' libs/stip_pb2_grpc.py
 #### INSTALLATION
 The only python dependency required for this library is grpcio, a python gRPC implementation. It may be installed using pip with the command
 
     # install the grpcio library
     pip3 install grpcio
 
-To use this library from another project, the path must be importing by the executing python code.
-#### EXAMPLES
-The 'examples' folder in the root directory contains a variety of library usafe illustrations. Most functionality is driven by performing stip requests (using both synchronous as streaming API's) and iteratring over results. Thankfully, this process is abstracted through API functions. Resulting objects are defined by Protobufs as follows
+To use this library from another project, the path must be imported by the executing python code.
+
+## EXAMPLES
+The 'examples' folder in the root directory contains a variety of library usage illustrations. Most functionality is driven by performing stip requests (using both synchronous as streaming gRPC API's) and iteratring over results. Thankfully, this process is abstracted through API functions. Resulting objects are defined by Protobufs as follows
 
     message Album {
         required int32 dhtKeyLength = 1;

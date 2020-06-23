@@ -1,7 +1,7 @@
 import gc
 import grpc
-import stip_pb2
-import stip_pb2_grpc
+import libs.stip_pb2 as stip_pb2
+import libs.stip_pb2_grpc as stip_pb2_grpc
 
 class IteratorBuilder:
     def __init__(self, request):
