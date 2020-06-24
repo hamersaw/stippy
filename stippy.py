@@ -2,6 +2,7 @@ import gc
 import grpc
 import libs.stip_pb2 as stip_pb2
 import libs.stip_pb2_grpc as stip_pb2_grpc
+import libs.libstiprs as stiprs
 
 class IteratorBuilder:
     def __init__(self, request):
@@ -253,3 +254,9 @@ def list_nodes(host_addr):
 
     # return nodes
     return response.nodes
+
+'''
+SPLIT FUNCTIONS
+'''
+def split_size(path, album_geocode, target_geocode):
+    return stiprs.split_size(path, album_geocode, target_geocode)
