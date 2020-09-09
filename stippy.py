@@ -1,3 +1,8 @@
+import numpy
+import gdal
+import socket
+import struct
+
 import gc
 import grpc
 import stip_pb2
@@ -253,3 +258,113 @@ def list_nodes(host_addr):
 
     # return nodes
     return response.nodes
+
+'''
+READ FUNCTIONS
+'''
+def read_file(host_addr, path):
+    # parse address fields
+    fields = host_addr.split(':')
+
+    # open socket
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.connect((fields[0], int(fields[1])))
+
+        # write read op
+        sock.sendall(struct.pack('B', 0))
+
+        # write path
+        path_bytes = path.encode('utf-8')
+        sock.sendall(struct.pack('B', len(path_bytes)))
+        sock.sendall(path_bytes)
+
+        result = sock.recv(1, socket.MSG_WAITALL)
+        if result[0]:
+            # TODO - handle error
+            print('failure')
+
+        # TODO write split indicator
+        sock.sendall(struct.pack('B', 0))
+
+        # read image dimensions
+        width_buf = sock.recv(4, socket.MSG_WAITALL)
+        width = struct.unpack('>I', width_buf)[0]
+
+        height_buf = sock.recv(4, socket.MSG_WAITALL)
+        height = struct.unpack('>I', height_buf)[0]
+
+        # read image transform
+        transform = []
+        for i in range(0, 6):
+            value_buf = sock.recv(8, socket.MSG_WAITALL)
+            value = struct.unpack('>d', value_buf)[0]
+
+            transform.append(value)
+
+        # read image projection
+        projection_len_buf = sock.recv(4, socket.MSG_WAITALL)
+        projection_len = struct.unpack('>I', projection_len_buf)[0]
+        projection_buf = sock.recv(projection_len)
+        projection = projection_buf.decode('utf-8')
+
+        # read gdal type
+        gdal_type_buf = sock.recv(4, socket.MSG_WAITALL)
+        gdal_type = struct.unpack('>I', gdal_type_buf)[0]
+
+        # read no data value
+        no_data_value_ind_buf = sock.recv(1, socket.MSG_WAITALL)
+        no_data_value_ind = \
+            struct.unpack('>B', no_data_value_ind_buf)[0]
+        if no_data_value_ind != 0:
+            no_data_value_buf = sock.recv(8, socket.MSG_WAITALL)
+            no_data_value = struct.unpack('>d', no_data_value_buf)[0]
+        else:
+            no_data_value = None
+
+        # read rasterband count
+        rasterband_count_buf = sock.recv(1, socket.MSG_WAITALL)
+        rasterband_count = struct.unpack('>B', rasterband_count_buf)[0]
+
+        # create image
+        driver = gdal.GetDriverByName('Mem')
+        dataset = driver.Create('unreachable', xsize=width,
+            ysize=height, bands=rasterband_count, eType=gdal_type)
+
+        dataset.SetGeoTransform(transform)
+        dataset.SetProjection(projection)
+
+        # read image rasters
+        pixel_count = width * height
+        for i in range(0, rasterband_count):
+            # read gdal type
+            gdal_type_buf = sock.recv(4, socket.MSG_WAITALL)
+            gdal_type = struct.unpack('>I', gdal_type_buf)[0]
+
+            buf_size = pixel_count
+            if gdal_type == 2 or gdal_type == 3:
+                buf_size *= 2
+
+            data_buf = sock.recv(buf_size, socket.MSG_WAITALL)
+            if not data_buf:
+                # TODO
+                print('failure')
+            
+            data = []
+            for j in range(0, pixel_count):
+                if gdal_type == 1:
+                    value = data_buf[j]
+                elif gdal_type == 2:
+                    value = struct.unpack('>h',
+                        data_buf[j * 2:j * 2 + 2])[0]
+                elif gdal_type == 3:
+                    value = struct.unpack('>H',
+                        data_buf[j * 2:j * 2 + 2])[0]
+
+                data.append(value)
+
+            dataset.GetRasterBand(i+1) \
+                .WriteRaster(0, 0, width, height, data_buf)
+
+        sock.close()
+
+    return dataset
