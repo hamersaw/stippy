@@ -1,4 +1,5 @@
 #!/bin/python3
+import gdal
 import os
 import sys
 
@@ -14,9 +15,14 @@ if __name__ == '__main__':
     print('-----IMAGES-----')
     stip_iter = stippy.list_images(host_addr, 'test',
         geocode='9xjk', recurse=True)
+
     for (node, image) in stip_iter:
         if len(image.files) != 4:
             continue
 
         print(image.geocode)
-        dataset = stippy.read_file(node.xferAddr, image.files[3].path)
+        dataset = stippy.read_file(node.xferAddr, image.files[3].path,
+            subgeocode=(stippy.GEOHASH, image.geocode))
+
+        driver = gdal.GetDriverByName('GTiff')
+        driver.CreateCopy('/tmp/' + image.geocode + '.tif', dataset)

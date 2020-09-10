@@ -8,6 +8,9 @@ import grpc
 import stip_pb2
 import stip_pb2_grpc
 
+GEOHASH=stip_pb2.GEOHASH
+QUADTILE=stip_pb2.QUADTILE
+
 class IteratorBuilder:
     def __init__(self, request):
         self.request = request
@@ -262,7 +265,7 @@ def list_nodes(host_addr):
 '''
 READ FUNCTIONS
 '''
-def read_file(host_addr, path):
+def read_file(host_addr, path, subgeocode=None):
     # parse address fields
     fields = host_addr.split(':')
 
@@ -278,13 +281,26 @@ def read_file(host_addr, path):
         sock.sendall(struct.pack('B', len(path_bytes)))
         sock.sendall(path_bytes)
 
-        result = sock.recv(1, socket.MSG_WAITALL)
-        if result[0]:
-            # TODO - handle error
-            print('failure')
+        # write split geocode
+        if subgeocode == None:
+            sock.sendall(struct.pack('B', 0))
+        else:
+            sock.sendall(struct.pack('B', 1))
+            sock.sendall(struct.pack('B', subgeocode[0]))
+            subgeocode_bytes = subgeocode[1].encode('utf-8')
+            sock.sendall(struct.pack('B', len(subgeocode_bytes)))
+            sock.sendall(subgeocode_bytes)
 
-        # TODO write split indicator
-        sock.sendall(struct.pack('B', 0))
+        # recv process result
+        process_result = sock.recv(1, socket.MSG_WAITALL)
+        if process_result[0]:
+            # if error -> read message and raise
+            error_len_buf = sock.recv(1, socket.MSG_WAITALL)
+            error_len = struct.unpack('>B', error_len_buf)[0]
+            error_buf = sock.recv(error_len)
+            error = error_buf.decode('utf-8')
+
+            raise ValueError(error);
 
         # read image dimensions
         width_buf = sock.recv(4, socket.MSG_WAITALL)
@@ -345,9 +361,6 @@ def read_file(host_addr, path):
                 buf_size *= 2
 
             data_buf = sock.recv(buf_size, socket.MSG_WAITALL)
-            if not data_buf:
-                # TODO
-                print('failure')
             
             data = []
             for j in range(0, pixel_count):
