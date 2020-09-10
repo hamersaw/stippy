@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
         print(image.geocode)
         dataset = stippy.read_file(node.xferAddr, image.files[3].path,
-            subgeocode=(stippy.GEOHASH, image.geocode))
+            subgeocode=(stippy.GEOHASH, image.geocode + '0'))
 
         driver = gdal.GetDriverByName('GTiff')
         driver.CreateCopy('/tmp/' + image.geocode + '.tif', dataset)
